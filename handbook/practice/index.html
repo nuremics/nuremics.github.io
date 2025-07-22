@@ -1,0 +1,2325 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../theory/">
+      
+      
+        <link rel="next" href="../../labs/Apps/General/DEMO_APP/">
+      
+      
+      <link rel="icon" href="../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Practice - NUREMICS®</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Jost";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practice" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NUREMICS®" class="md-header__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NUREMICS®
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NUREMICS®" class="md-nav__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    NUREMICS®
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Handbook
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Handbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implement-procs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement Procs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemble-procs-into-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemble Procs into App
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-working-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Working Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Studies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Input Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/Apps/General/DEMO_APP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DEMO_APP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Procs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Procs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/Procs/General/PolygonGeometryProc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PolygonGeometryProc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/Procs/General/ProjectileModelProc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ProjectileModelProc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/Procs/General/TrajectoryAnalysisProc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TrajectoryAnalysisProc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implement-procs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement Procs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemble-procs-into-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemble Procs into App
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-working-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Working Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Studies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-input-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Input Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practice">Practice</h1>
+<h2 id="create-app">Create App</h2>
+<p>This section walks you through the process of building a custom <strong>NUREMICS</strong> application from scratch. You'll start by implementing your own <a href="../theory/#proc"><strong>Procs</strong></a>, which encapsulate domain-specific logic and computational tasks. Then, you’ll learn how to assemble these building blocks into a fully operational <a href="../theory/#app"><strong>App</strong></a>, ready to run studies and generate structured results.</p>
+<p>Whether you're developing a quick prototype or a full-scale scientific workflow, this guide will help you translate your ideas into modular, reusable, traceable and scalable software components.</p>
+<h3 id="implement-procs">Implement Procs</h3>
+<p>We start by defining the core building blocks of the <strong>App</strong> to be created: the <strong>Procs</strong>. Each <strong>Proc</strong> is a reusable item that encapsulates a specific piece of logic executed within the overall workflow. Internally, this logic can be further decomposed into elementary operations (<strong>Ops</strong>), implemented as individual functions (units) within the <strong>Proc</strong> itself.</p>
+<p>To implement our first <strong>Proc</strong>, we begin by importing the <code>Process</code> base class from <strong>NUREMICS</strong>, which all custom <strong>Procs</strong> must inherit from. To make this inheritance simple and structured, we also import the <code>attrs</code> library, which helps define clean, data-driven Python classes.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+</code></pre></div>
+<p>We then declare our first <strong>Proc</strong> as a Python class named <code>PolygonGeometryProc</code>, inheriting from the <code>Process</code> base class. This marks it as a modular item of computation which can be executed within a <strong>NUREMICS</strong> workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+</code></pre></div>
+<p>We now declare the input data required by our <code>PolygonGeometryProc</code>, grouped into two categories: <strong>Parameters</strong> and <strong>Paths</strong>. Each input is defined using <code>attrs.field()</code> and marked with <code>metadata={"input": True}</code>.</p>
+<p>This metadata is essential: it tells the <strong>NUREMICS</strong> framework that these attributes are expected as input data, ensuring they are properly tracked and managed throughout the workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="c1"># Parameters</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">n_sides</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Paths</span>
+    <span class="n">title_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">converter</span><span class="o">=</span><span class="n">Path</span><span class="p">)</span>
+</code></pre></div>
+<p>In addition to the previously declared input data, a <strong>Proc</strong> can also define internal variables: attributes used during the execution of its internal logic but not provided as input data.</p>
+<p>These internal variables, like <code>df_points</code> in our example below, are declared without the <code>metadata={"input": True}</code> tag, signaling to the <strong>NUREMICS</strong> framework that they are not exposed to the workflow and will be set or computed within the <strong>Proc</strong> itself.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="c1"># Parameters</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">n_sides</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Paths</span>
+    <span class="n">title_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">converter</span><span class="o">=</span><span class="n">Path</span><span class="p">)</span>
+
+    <span class="c1"># Internal</span>
+    <span class="n">df_points</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p>The operations executed by the <strong>Proc</strong> are finally implemented as elementary functions (<strong>Ops</strong>), which are then sequentially called within the <code>__call__()</code> method to define the overall logic of the <strong>Proc</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="c1"># Parameters</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">n_sides</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Paths</span>
+    <span class="n">title_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">converter</span><span class="o">=</span><span class="n">Path</span><span class="p">)</span>
+
+    <span class="c1"># Internal</span>
+    <span class="n">df_points</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_polygon_shape</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_polygon_shape</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+</code></pre></div>
+<p>Note that the <strong>Proc</strong> should at some point produce output data, typically in the form of files or folders generated during the execution of its <strong>Ops</strong>. To make these output data trackable by the <strong>NUREMICS</strong> framework, each must be registered in the <code>self.output_paths</code> dictionary using a label that is unique to the <strong>Proc</strong> (e.g., <code>"coords_file"</code>, <code>"fig_file"</code>).</p>
+<p>Using the dictionary syntax <code>self.output_paths["coords_file"]</code> effectively declares an output variable named <code>coords_file</code>, which will later be instantiated by assigning it a specific file or folder name when integrating the <strong>Proc</strong> into a broader application workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="c1"># Parameters</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">n_sides</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Paths</span>
+    <span class="n">title_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">converter</span><span class="o">=</span><span class="n">Path</span><span class="p">)</span>
+
+    <span class="c1"># Internal</span>
+    <span class="n">df_points</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_polygon_shape</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_polygon_shape</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;coords_file&quot;</span><span class="p">]</span>
+        <span class="c1"># &lt;/&gt; Write file &lt;/&gt;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;fig_file&quot;</span><span class="p">]</span>
+        <span class="c1"># &lt;/&gt; Write file &lt;/&gt;</span>
+</code></pre></div>
+<p>Even though <strong>Procs</strong> are not intended to be executed independently by end-users, they are still designed with the possibility to run <em>out of the box</em>. This allows developers to easily execute them during the development phase or when implementing dedicated unit tests for a specific <strong>Proc</strong>.</p>
+<p>In such cases, it is important to set <code>set_inputs=True</code> when instantiating the <strong>Proc</strong>, to explicitly inform the <strong>NUREMICS</strong> framework that the input data are being provided manually, outside of any workflow context.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+
+<span class="nd">@attrs</span><span class="o">.</span><span class="n">define</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PolygonGeometryProc</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+
+    <span class="c1"># Parameters</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">n_sides</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Paths</span>
+    <span class="n">title_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">converter</span><span class="o">=</span><span class="n">Path</span><span class="p">)</span>
+
+    <span class="c1"># Internal</span>
+    <span class="n">df_points</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">generate_polygon_shape</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_polygon_shape</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;coords_file&quot;</span><span class="p">]</span>
+        <span class="c1"># &lt;/&gt; Write file &lt;/&gt;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_polygon_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;fig_file&quot;</span><span class="p">]</span>
+        <span class="c1"># &lt;/&gt; Write file &lt;/&gt;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># Define working directory</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="o">...</span>
+
+    <span class="c1"># Go to working directory</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">working_dir</span><span class="p">)</span>
+
+    <span class="c1"># Create dictionary containing input data</span>
+    <span class="n">dict_inputs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+        <span class="s2">&quot;n_sides&quot;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+        <span class="s2">&quot;title_file&quot;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Create process</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">PolygonGeometryProc</span><span class="p">(</span>
+        <span class="n">dict_inputs</span><span class="o">=</span><span class="n">dict_inputs</span><span class="p">,</span>
+        <span class="n">set_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;coords_file&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;points_coordinates.csv&quot;</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">output_paths</span><span class="p">[</span><span class="s2">&quot;fig_file&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;polygon_shape.png&quot;</span>
+
+    <span class="c1"># Run process</span>
+    <span class="n">process</span><span class="p">()</span>
+    <span class="n">process</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="assemble-procs-into-app">Assemble Procs into App</h3>
+<p>Most of the development effort has already been carried out when implementing the individual <strong>Procs</strong>. The next step consists in assembling them into a coherent <strong>App</strong>, where each <strong>Proc</strong> is instantiated, connected, and orchestrated to form a complete, executable workflow.</p>
+<p>We start by defining the name of our <strong>App</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+</code></pre></div>
+<p>We then import the <code>Application</code> class from the <strong>NUREMICS</strong> framework, which serves as the container and manager to define a workflow composed of multiple <strong>Procs</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+</code></pre></div>
+<p>We now import the two <strong>Procs</strong>, <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>, that we previously implemented. These will be the building blocks to assemble into our final <strong>App</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+</code></pre></div>
+<p>The source code of the <strong>App</strong> then adopts the structure of a standard Python script, which can both be executed directly or imported as a module. This is achieved by defining a <code>main()</code> function and guarding it with the typical <code>if __name__ == "__main__":</code> statement.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Application logic here</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>In the <code>main()</code> function, we add two input arguments that the end-user must specify when launching the <strong>App</strong> inside the <code>if __name__ == "__main__":</code> block:</p>
+<ul>
+<li>
+<p><code>working_dir</code>: the working directory from which the <strong>App</strong> will be executed.</p>
+</li>
+<li>
+<p><code>studies</code>: a list of study names that the end-user wants to perform with the <strong>App</strong>.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># Application logic here</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Inside the <code>main()</code> function, we define a list called <code>workflow</code> which contains the sequence of <strong>Procs</strong> to be executed, in the order specified. This list is made up of dictionaries, where each dictionary describes the characteristics of a particular <strong>Proc</strong>.</p>
+<p>Let's first define the key <code>"process"</code> of each dictionary, which specifies the <strong>Proc</strong> class (previously imported, e.g., <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>) to instantiate and execute within the <strong>App</strong> workflow.</p>
+<p>This dictionary-based structure offers flexibility to easily add more parameters or options later by simply adding new keys to each dictionary in the workflow.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Define workflow #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">workflow</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">PolygonGeometryProc</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">ProjectileModelProc</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>We now create an <code>Application</code> object <code>app</code>, which acts as the core engine of our <strong>App</strong>. This object is instantiated using the previously defined inputs:</p>
+<ul>
+<li>
+<p><code>app_name</code>: the name of the <strong>App</strong>.</p>
+</li>
+<li>
+<p><code>working_dir</code>: the root directory from which the <strong>App</strong> is executed.</p>
+</li>
+<li>
+<p><code>workflow</code>: the ordered list of <strong>Procs</strong> to run.</p>
+</li>
+<li>
+<p><code>studies</code>: the list of studies the end-user wishes to perform.</p>
+</li>
+</ul>
+<p>Once the <code>Application</code> object is created, calling <code>app()</code> launches the workflow execution of all the defined <strong>Procs</strong> for each study.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Define workflow #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">workflow</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">PolygonGeometryProc</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">ProjectileModelProc</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="c1"># ------------------ #</span>
+    <span class="c1"># Define application #</span>
+    <span class="c1"># ------------------ #</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span>
+        <span class="n">app_name</span><span class="o">=</span><span class="n">APP_NAME</span><span class="p">,</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Run it!</span>
+    <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>When running the <strong>App</strong>, <strong>NUREMICS</strong> first provides the following terminal feedback:</p>
+<ul>
+<li>
+<p>A visual banner indicating the launch of a <strong>NUREMICS App</strong>.</p>
+</li>
+<li>
+<p>A structured overview of the assembled workflow, showing each registered <strong>Proc</strong>, its associated <strong>Ops</strong> (functions), and their order of execution within the <strong>App</strong> workflow.</p>
+</li>
+</ul>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="w">                      </span>___
+<span class="w">                     </span>/<span class="se">\ </span><span class="w"> </span><span class="se">\ </span><span class="w">                     </span>___
+<span class="w">     </span>___<span class="w">            </span>/::<span class="se">\ </span><span class="w"> </span><span class="se">\ </span><span class="w">       </span>___<span class="w">         </span>/<span class="se">\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/<span class="se">\_</span>_<span class="se">\ </span><span class="w">         </span>/:/<span class="se">\:\ </span><span class="w"> </span><span class="se">\ </span><span class="w">     </span>/<span class="se">\_</span>_<span class="se">\ </span><span class="w">      </span>/::<span class="se">\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>/::<span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">        </span>/::<span class="se">\~\:\ </span><span class="w"> </span><span class="se">\ </span><span class="w">   </span>/::<span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">     </span>/:/<span class="se">\:\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/:<span class="p">|</span>:<span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">       </span>/:/<span class="se">\:\ \:\_</span>_<span class="se">\ </span><span class="w"> </span>/:<span class="p">|</span>:<span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">    </span>/:/<span class="w">  </span><span class="se">\:\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w"> </span>/:/<span class="p">|</span>:<span class="p">|</span><span class="w">  </span><span class="p">|</span>__<span class="w">     </span><span class="se">\/</span>_<span class="p">|</span>::<span class="se">\/</span>:/<span class="w">  </span>/<span class="w"> </span>/:/<span class="p">|</span>:<span class="p">|</span>__<span class="p">|</span>__<span class="w"> </span>/:/__/<span class="w"> </span><span class="se">\:\_</span>_<span class="se">\</span>
+/:/<span class="w"> </span><span class="p">|</span>:<span class="p">|</span><span class="w"> </span>/<span class="se">\_</span>_<span class="se">\ </span><span class="w"> </span>___<span class="w">  </span><span class="p">|</span>:<span class="p">|</span>::/<span class="w">  </span>/<span class="w"> </span>/:/<span class="w"> </span><span class="p">|</span>::::<span class="se">\_</span>_<span class="se">\\</span>:<span class="se">\ </span><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\/</span>__/
+<span class="se">\/</span>__<span class="p">|</span>:<span class="p">|</span>/:/<span class="w">  </span>/<span class="w"> </span>/<span class="se">\_</span>_<span class="se">\ </span><span class="p">|</span>:<span class="p">|</span><span class="se">\/</span>__/<span class="w">  </span><span class="se">\/</span>__/~~/:/<span class="w">  </span>/<span class="w"> </span><span class="se">\:\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span>:/:/<span class="w">  </span>/<span class="w"> </span>/:/<span class="w">  </span>/<span class="w"> </span><span class="p">|</span>:<span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>___<span class="w">     </span>/:/<span class="w">  </span>/<span class="w">   </span><span class="se">\:\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span>::/<span class="w">  </span>/<span class="w"> </span>/:/<span class="w">  </span>/<span class="w">   </span><span class="se">\|</span>__<span class="p">|</span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span><span class="se">\ </span><span class="w">  </span>/:/<span class="w">  </span>/<span class="w"> </span>___<span class="w"> </span><span class="se">\:\_</span>_<span class="se">\ </span>___
+<span class="w">    </span>/:/<span class="w">  </span>/<span class="w"> </span>/:/<span class="w">  </span>/<span class="w">  </span>___<span class="w">    </span>/::<span class="se">\ </span><span class="w"> </span><span class="se">\ </span>/:/<span class="w">  </span>/<span class="w"> </span>/<span class="se">\ </span><span class="w"> </span><span class="se">\ \/</span>__//<span class="se">\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="se">\/</span>__/<span class="w"> </span>/:/__/<span class="w">  </span>/<span class="se">\_</span>_<span class="se">\ </span><span class="w"> </span>/:/<span class="se">\:\ </span><span class="w"> </span><span class="se">\\</span>/__/<span class="w">  </span><span class="se">\:\ </span><span class="w"> </span><span class="se">\ </span><span class="w">   </span>/::<span class="se">\ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">          </span><span class="se">\:\ </span><span class="w"> </span><span class="se">\ </span>/:/<span class="w">  </span>/<span class="w"> </span>/::<span class="se">\~\:\ </span><span class="w"> </span><span class="se">\ </span><span class="w">     </span>/::<span class="se">\_</span>_<span class="se">\ </span><span class="w"> </span>/:/<span class="se">\ \ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">           </span><span class="se">\:\ </span><span class="w"> </span>/:/<span class="w">  </span>/<span class="w"> </span>/:/<span class="se">\:\ \:\_</span>_<span class="se">\ </span><span class="w"> </span>__/:/<span class="se">\/</span>__/<span class="w"> </span>_<span class="se">\:\~\ \ </span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span><span class="se">\:\/</span>:/<span class="w">  </span>/<span class="w">  </span><span class="se">\:\~\:\ \/</span>__/<span class="w"> </span>/<span class="se">\/</span>:/<span class="w">  </span>/<span class="w">   </span>/<span class="se">\ \:\ \ \_</span>_<span class="se">\</span>
+<span class="w">             </span><span class="se">\:</span>:/<span class="w">  </span>/<span class="w">    </span><span class="se">\:\ \:\_</span>_<span class="se">\ </span><span class="w">  </span><span class="se">\:</span>:/__/<span class="w">    </span><span class="se">\:\ \:\ \/</span>__/
+<span class="w">              </span><span class="se">\/</span>__/<span class="w">      </span><span class="se">\:\ \/</span>__/<span class="w">    </span><span class="se">\:\_</span>_<span class="se">\ </span><span class="w">    </span><span class="se">\:\ \:\_</span>_<span class="se">\</span>
+<span class="w">                          </span><span class="se">\:\_</span>_<span class="se">\ </span><span class="w">      </span><span class="se">\/</span>__/<span class="w">      </span><span class="se">\:\/</span>:/<span class="w">  </span>/
+<span class="w">                           </span><span class="se">\/</span>__/<span class="w">                   </span><span class="se">\:</span>:/<span class="w">  </span>/
+<span class="w">                                                    </span><span class="se">\/</span>__/
+&gt;<span class="w"> </span>APPLICATION<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Workflow<span class="w"> </span><span class="p">|</span>
+DEMO_APP_____
+<span class="w">             </span><span class="p">|</span>_____PolygonGeometryProc_____
+<span class="w">             </span><span class="p">|</span><span class="w">                             </span><span class="p">|</span>_____generate_polygon_shape
+<span class="w">             </span><span class="p">|</span><span class="w">                             </span><span class="p">|</span>_____plot_polygon_shape
+<span class="w">             </span><span class="p">|</span>
+<span class="w">             </span><span class="p">|</span>_____ProjectileModelProc_____
+<span class="w">                                           </span><span class="p">|</span>_____simulate_projectile_motion
+<span class="w">                                           </span><span class="p">|</span>_____calculate_analytical_trajectory
+<span class="w">                                           </span><span class="p">|</span>_____compare_model_vs_analytical_trajectories
+</code></pre></div></p>
+<p>At this stage, <strong>NUREMICS</strong> also performs a structural check of each <strong>Proc</strong> by inspecting its <code>__call__</code> method. Specifically, it ensures that only functions defined within the <strong>Proc</strong> class itself are invoked during execution. This design choice enforces a clean and self-contained structure for each <strong>Proc</strong>, where all internal logic remains encapsulated.</p>
+<p>Let’s consider a case where the developer does not adhere to this enforced structural rule, for instance, by injecting additional logic directly into the <code>__call__</code> method of a <strong>Proc</strong> (in this example, in the <code>ProjectileModelProc</code> class).</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>
+
+        <span class="n">some_parameter</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># &lt;-- External logic added here</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulate_projectile_motion</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">calculate_analytical_trajectory</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compare_model_vs_analytical_trajectories</span><span class="p">()</span>
+</code></pre></div>
+<p>In this situation, <strong>NUREMICS</strong> will immediately raise a structural validation error and halt execution.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>Workflow<span class="w"> </span><span class="p">|</span>
+DEMO_APP_____
+<span class="w">             </span><span class="p">|</span>_____PolygonGeometryProc_____
+<span class="w">             </span><span class="p">|</span><span class="w">                             </span><span class="p">|</span>_____generate_polygon_shape
+<span class="w">             </span><span class="p">|</span><span class="w">                             </span><span class="p">|</span>_____plot_polygon_shape
+<span class="w">             </span><span class="p">|</span>
+<span class="w">             </span><span class="p">|</span>_____ProjectileModelProc_____<span class="o">(</span>X<span class="o">)</span>
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Each<span class="w"> </span>process<span class="w"> </span>must<span class="w"> </span>only<span class="w"> </span>call<span class="w"> </span>its<span class="w"> </span>internal<span class="w"> </span><span class="k">function</span><span class="o">(</span>s<span class="o">)</span>:
+
+<span class="w">    </span>def<span class="w"> </span>__call__<span class="o">(</span>self<span class="o">)</span>:
+<span class="w">        </span>super<span class="o">()</span>.__call__<span class="o">()</span>
+
+<span class="w">        </span>self.operation1<span class="o">()</span>
+<span class="w">        </span>self.operation2<span class="o">()</span>
+<span class="w">        </span>self.operation3<span class="o">()</span>
+<span class="w">        </span>...
+</code></pre></div></p>
+<p><strong>NUREMICS</strong> is then expected to display a summary of all required input/output data for each <strong>Proc</strong>, along with their current mapping status within the <strong>App</strong>.</p>
+<p>At this stage, the system automatically verifies whether every required input/output data has been properly mapped within the <strong>App</strong> configuration.</p>
+<p>If any <strong>input parameters</strong> are missing, they are explicitly listed, and the developer is prompted to define them using either the <code>"user_params"</code> or <code>"hard_params"</code> key.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>radius<span class="w">  </span>-----<span class="o">||</span>-----<span class="w"> </span>Not<span class="w"> </span>defined<span class="w"> </span><span class="o">(</span>X<span class="o">)</span>
+<span class="o">(</span>int<span class="o">)</span><span class="w">   </span>n_sides<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>Not<span class="w"> </span>defined<span class="w"> </span><span class="o">(</span>X<span class="o">)</span>
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>all<span class="w"> </span>input<span class="w"> </span>parameters<span class="w"> </span>either<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;user_params&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;hard_params&quot;</span>.
+</code></pre></div></p>
+<p>The <strong>input parameters</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"user_params"</code> and/or <code>"hard_params"</code> keys in its corresponding dictionary entry inside the <code>workflow</code> list.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Define workflow #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">workflow</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">PolygonGeometryProc</span><span class="p">,</span>
+            <span class="s2">&quot;user_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;n_sides&quot;</span><span class="p">:</span> <span class="s2">&quot;nb_sides&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;hard_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">ProjectileModelProc</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="c1"># ------------------ #</span>
+    <span class="c1"># Define application #</span>
+    <span class="c1"># ------------------ #</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span>
+        <span class="n">app_name</span><span class="o">=</span><span class="n">APP_NAME</span><span class="p">,</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Run it!</span>
+    <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>When running the <strong>App</strong> again, <strong>NUREMICS</strong> detects that all required <strong>input parameters</strong> for <code>PolygonGeometryProc</code> have been successfully mapped.</p>
+<p>However, it now reports that one or more <strong>input paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using either the <code>"user_paths"</code> or <code>"required_paths"</code> key.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>radius<span class="w">  </span>-----<span class="o">||</span>-----<span class="w"> </span><span class="m">0</span>.5<span class="w">      </span><span class="o">(</span>hard_params<span class="o">)</span>
+<span class="o">(</span>int<span class="o">)</span><span class="w">   </span>n_sides<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>user_params<span class="o">)</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>Not<span class="w"> </span>defined<span class="w"> </span><span class="o">(</span>X<span class="o">)</span>
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>all<span class="w"> </span>input<span class="w"> </span>paths<span class="w"> </span>either<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;user_paths&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;required_paths&quot;</span>.
+</code></pre></div></p>
+<p>The <strong>input paths</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"user_paths"</code> and/or <code>"required_paths"</code> keys in its corresponding dictionary entry inside the workflow list.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Define workflow #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">workflow</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">PolygonGeometryProc</span><span class="p">,</span>
+            <span class="s2">&quot;user_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;n_sides&quot;</span><span class="p">:</span> <span class="s2">&quot;nb_sides&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;hard_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;user_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;title_file&quot;</span><span class="p">:</span> <span class="s2">&quot;plot_title.txt&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">ProjectileModelProc</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="c1"># ------------------ #</span>
+    <span class="c1"># Define application #</span>
+    <span class="c1"># ------------------ #</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span>
+        <span class="n">app_name</span><span class="o">=</span><span class="n">APP_NAME</span><span class="p">,</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Run it!</span>
+    <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>When running the <strong>App</strong> again, <strong>NUREMICS</strong> detects that all required <strong>input paths</strong> for <code>PolygonGeometryProc</code> have been successfully mapped.</p>
+<p>However, it now reports that one or more <strong>output paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using the <code>"output_paths"</code> key.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>radius<span class="w">  </span>-----<span class="o">||</span>-----<span class="w"> </span><span class="m">0</span>.5<span class="w">      </span><span class="o">(</span>hard_params<span class="o">)</span>
+<span class="o">(</span>int<span class="o">)</span><span class="w">   </span>n_sides<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>user_params<span class="o">)</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>user_paths<span class="o">)</span>
+&gt;<span class="w"> </span>Output<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+coords_file<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>Not<span class="w"> </span>defined<span class="w"> </span><span class="o">(</span>X<span class="o">)</span>
+fig_file<span class="w">    </span>-----<span class="o">||</span>-----<span class="w"> </span>Not<span class="w"> </span>defined<span class="w"> </span><span class="o">(</span>X<span class="o">)</span>
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>all<span class="w"> </span>output<span class="w"> </span>paths<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;output_paths&quot;</span>.
+</code></pre></div></p>
+<p>The <strong>output paths</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"output_paths"</code> key in its corresponding dictionary entry inside the workflow list.</p>
+<p>In the same way, we also complete the mapping for the <strong>Proc</strong> <code>ProjectileModelProc</code> by providing all required entries: <code>"user_params"</code> and/or <code>"hard_params"</code>, <code>"user_paths"</code> and/or <code>"required_paths"</code>, <code>"output_paths"</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
+    <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">studies</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Default&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Define workflow #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">workflow</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">PolygonGeometryProc</span><span class="p">,</span>
+            <span class="s2">&quot;user_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;n_sides&quot;</span><span class="p">:</span> <span class="s2">&quot;nb_sides&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;hard_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;user_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;title_file&quot;</span><span class="p">:</span> <span class="s2">&quot;plot_title.txt&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;output_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;coords_file&quot;</span><span class="p">:</span> <span class="s2">&quot;points_coordinates.csv&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;fig_file&quot;</span><span class="p">:</span> <span class="s2">&quot;polygon_shape.png&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="n">ProjectileModelProc</span><span class="p">,</span>
+            <span class="s2">&quot;user_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;gravity&quot;</span><span class="p">:</span> <span class="s2">&quot;gravity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="s2">&quot;mass&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;user_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;velocity_file&quot;</span><span class="p">:</span> <span class="s2">&quot;velocity.json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;configs_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;configs&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;required_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;coords_file&quot;</span><span class="p">:</span> <span class="s2">&quot;points_coordinates.csv&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;output_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;comp_folder&quot;</span><span class="p">:</span> <span class="s2">&quot;comparison&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="c1"># ------------------ #</span>
+    <span class="c1"># Define application #</span>
+    <span class="c1"># ------------------ #</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span>
+        <span class="n">app_name</span><span class="o">=</span><span class="n">APP_NAME</span><span class="p">,</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">workflow</span><span class="o">=</span><span class="n">workflow</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Run it!</span>
+    <span class="n">app</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>With all required mappings now properly defined for each <strong>Proc</strong>, the <strong>App</strong> can be executed without raising any errors. <strong>NUREMICS</strong> confirms that the full mapping is complete by prompting a summary for each <strong>Proc</strong>, indicating that all <strong>input parameters</strong>, <strong>input paths</strong>, and <strong>output paths</strong> have been successfully resolved.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>radius<span class="w">  </span>-----<span class="o">||</span>-----<span class="w"> </span><span class="m">0</span>.5<span class="w">      </span><span class="o">(</span>hard_params<span class="o">)</span>
+<span class="o">(</span>int<span class="o">)</span><span class="w">   </span>n_sides<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>user_params<span class="o">)</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>user_paths<span class="o">)</span>
+&gt;<span class="w"> </span>Output<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+coords_file<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>points_coordinates.csv<span class="w"> </span><span class="o">(</span>output_paths<span class="o">)</span>
+fig_file<span class="w">    </span>-----<span class="o">||</span>-----<span class="w"> </span>polygon_shape.png<span class="w">      </span><span class="o">(</span>output_paths<span class="o">)</span>
+
+<span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>user_params<span class="o">)</span>
+<span class="o">(</span>float<span class="o">)</span><span class="w"> </span>mass<span class="w">    </span>-----<span class="o">||</span>-----<span class="w"> </span>mass<span class="w">    </span><span class="o">(</span>user_params<span class="o">)</span>
+&gt;<span class="w"> </span>Input<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+velocity_file<span class="w">  </span>-----<span class="o">||</span>-----<span class="w"> </span>velocity.json<span class="w">          </span><span class="o">(</span>user_paths<span class="o">)</span>
+configs_folder<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>configs<span class="w">                </span><span class="o">(</span>user_paths<span class="o">)</span>
+coords_file<span class="w">    </span>-----<span class="o">||</span>-----<span class="w"> </span>points_coordinates.csv<span class="w"> </span><span class="o">(</span>required_paths<span class="o">)</span>
+&gt;<span class="w"> </span>Output<span class="w"> </span>Path<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
+comp_folder<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>comparison<span class="w"> </span><span class="o">(</span>output_paths<span class="o">)</span>
+</code></pre></div></p>
+<p>As the <strong>App</strong> has now been fully assembled, <strong>NUREMICS</strong> displays a clean summary of its I/O interface, as it will appear to the end-user.</p>
+<p>This summary includes all declared user parameters and user paths required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing end-users to clearly understand what data they need to provide and what results to expect.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>INPUTS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Parameters<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>int<span class="o">)</span>
+&gt;<span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
+&gt;<span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
+
+<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Paths<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>plot_title.txt
+&gt;<span class="w"> </span>velocity.json
+&gt;<span class="w"> </span>configs
+
+&gt;<span class="w"> </span>OUTPUTS<span class="w"> </span>&lt;
+
+&gt;<span class="w"> </span>points_coordinates.csv
+&gt;<span class="w"> </span>polygon_shape.png
+&gt;<span class="w"> </span>comparison
+</code></pre></div></p>
+<p>With all <strong>Procs</strong> implemented and properly assembled within the <strong>App</strong>, the development work is now complete. The developer’s responsibility ends here (excluding, of course, the implementation of unit tests to ensure long-term maintainability, which falls outside the scope of this tutorial).</p>
+<p>The <strong>App</strong> is now fully functional and ready to be operated by end-users. From this point, users can interact with the <strong>App</strong> through its declared I/O interface, without needing to modify or understand the underlying code structure.</p>
+<h2 id="use-app">Use App</h2>
+<p>Now that the <strong>App</strong> has been fully implemented and assembled, this new section focuses on its usage from the end-user's perspective.</p>
+<p>We will demonstrate how to interact with a ready-to-use <strong>NUREMICS App</strong>, including how to provide inputs, run the <strong>App</strong>, and retrieve the expected outputs, all without needing to understand its internal structure.</p>
+<p>This section assumes the job of the developer is done, and shifts the focus to the operational phase of the <strong>App</strong>.</p>
+<h3 id="define-working-environment">Define Working Environment</h3>
+<p>Before running a <strong>NUREMICS App</strong>, the operator must first define the working environment in the <code>if __name__ == "__main__":</code> section of the <strong>App</strong>.</p>
+<p>This setup step specifies two key elements:
+- <strong>Working directory (<code>working_dir</code>):</strong> The root path where all input/output data, logs, and results will be stored.
+- <strong>Study names (<code>studies</code>):</strong> A list of identifiers corresponding to the different studies the operator wants to run. Each study will be managed in its own dedicated folder under the working directory.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># ------------------------ #</span>
+    <span class="c1"># Define working directory #</span>
+    <span class="c1"># ------------------------ #</span>
+    <span class="n">working_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;WORKING_DIR&quot;</span><span class="p">])</span>
+
+    <span class="c1"># -------------- #</span>
+    <span class="c1"># Define studies #</span>
+    <span class="c1"># -------------- #</span>
+    <span class="n">studies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Study_Shape&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Study_Velocity&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="c1"># --------------- #</span>
+    <span class="c1"># Run application #</span>
+    <span class="c1"># --------------- #</span>
+    <span class="n">main</span><span class="p">(</span>
+        <span class="n">working_dir</span><span class="o">=</span><span class="n">working_dir</span><span class="p">,</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">studies</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>In this example:</p>
+<ul>
+<li>The <code>working_dir</code> is read from the environment variable <code>WORKING_DIR</code> previously introduced.</li>
+<li>The <code>studies</code> list contains the names of the studies you want to run. You can define as many studies as needed, each representing a self-contained parametric study.</li>
+</ul>
+<p>As the <strong>App</strong> is executed, a new folder named after the <strong>App</strong> is automatically created under the specified <code>working_dir</code>. This folder acts as the root container for all the execution-related content generated by the <strong>App</strong>.</p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>└──<span class="w"> </span>studies.json
+</code></pre></div></p>
+<p>📁 <strong>App folder</strong> (<code>DEMO_APP/</code>)<br>
+The name of this folder is derived from the name of the application (<code>APP_NAME</code>) as defined during its construction.</p>
+<p>📄 <strong>Studies configuration file</strong> (<code>studies.json</code>)<br>
+This file serves as a centralized configuration hub for each study, allowing the operator to specify which input data remain fixed and which can vary across various experiments.</p>
+<h3 id="configure-studies">Configure Studies</h3>
+<p>The <strong>NUREMICS</strong> terminal now provides feedback on the defined studies and halts execution, indicating that the first study <code>Study_Shape</code> requires configuration.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>configs<span class="w"> </span>not<span class="w"> </span>configured.
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>configure<span class="w"> </span>file<span class="w"> </span>:
+&gt;<span class="w"> </span>.../DEMO_APP/studies.json
+</code></pre></div></p>
+<p>Let's configure <code>Study_Shape</code> by allowing only <code>nb_sides</code> to vary (by assigning a <code>true</code> value in the <code>studies.json</code> file), and keeping all other input data fixed (by assigning <code>false</code> values in the <code>studies.json</code> file) across the study.</p>
+<p>📄 <code>studies.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Study_Shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;execute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;nb_sides&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;user_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;plot_title.txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;velocity.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;configs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Study_Velocity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;execute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;nb_sides&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;user_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;plot_title.txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;velocity.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;configs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>At the next execution of the <strong>App</strong>, the <strong>NUREMICS</strong> terminal now prompts that <code>Study_Shape</code> is properly configured, but halts indicating that the second study <code>Study_Velocity</code> still requires configuration.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span>is<span class="w"> </span>variable.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs<span class="w"> </span>is<span class="w"> </span>fixed.
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span>
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span>not<span class="w"> </span>configured.
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>configs<span class="w"> </span>not<span class="w"> </span>configured.
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>configure<span class="w"> </span>file<span class="w"> </span>:
+&gt;<span class="w"> </span>.../DEMO_APP/studies.json
+</code></pre></div></p>
+<p>Let's this time configure <code>Study_Velocity</code> by allowing only <code>velocity.json</code> to vary, and keeping all other input data fixed across the study.</p>
+<p>📄 <code>studies.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Study_Shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;execute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;nb_sides&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;user_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;plot_title.txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;velocity.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;configs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Study_Velocity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;execute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;nb_sides&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;user_paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;plot_title.txt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;velocity.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;configs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>At the next execution of the <strong>App</strong>, the <strong>NUREMICS</strong> terminal now prompts that both <code>Study_Shape</code> and <code>Study_Velocity</code> are properly configured.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span>is<span class="w"> </span>variable.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs<span class="w"> </span>is<span class="w"> </span>fixed.
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span>
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span>is<span class="w"> </span>fixed.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span>is<span class="w"> </span>variable.
+<span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs<span class="w"> </span>is<span class="w"> </span>fixed.
+</code></pre></div></p>
+<p>Going back to the data tree generated within the defined <code>working_dir</code>, we can see that a specific folder for each study has been created.</p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>├──<span class="w"> </span>studies.json
+<span class="w">    </span>├──<span class="w"> </span>Study_Shape/
+<span class="w">    </span>└──<span class="w"> </span>Study_Velocity/
+</code></pre></div></p>
+<h3 id="set-input-data">Set Input Data</h3>
+<p>Each study directory within the data tree now contains an initialized input database that must be completed by the operator.</p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>├──<span class="w"> </span>studies.json
+<span class="w">    </span>├──<span class="w"> </span>Study_Shape/
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>0_inputs/
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>inputs.json
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>inputs.csv
+<span class="w">    </span>└──<span class="w"> </span>Study_Velocity/
+<span class="w">        </span>├──<span class="w"> </span>0_inputs/
+<span class="w">        </span>├──<span class="w"> </span>inputs.json
+<span class="w">        </span>└──<span class="w"> </span>inputs.csv
+</code></pre></div></p>
+<p>This input database contains:</p>
+<ul>
+<li><strong><code>0_inputs</code>:</strong> This folder must contain the input files and/or folders defined as <code>"user_paths"</code>.</li>
+<li><strong><code>inputs.json</code>:</strong> This file must contain the input parameters defined as <em>fixed</em> <code>"user_params"</code>.</li>
+<li><strong><code>inputs.csv</code>:</strong> This file must contain the input parameters defined as <em>variable</em> <code>"user_params"</code>.</li>
+</ul>
+<p>At this stage of the <strong>App</strong> execution, the <strong>NUREMICS</strong> terminal halts by indicating that the <em>fixed</em> input data must be set.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>configs
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span><span class="nb">set</span><span class="w"> </span>inputs<span class="w"> </span>:
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/inputs.json
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/plot_title.txt
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/velocity.json
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/configs
+</code></pre></div></p>
+<p>For the <code>Study_Shape</code>, we are speaking about:</p>
+<ul>
+<li><code>gravity</code> and <code>mass</code> within the <code>inputs.json</code> file.</li>
+<li><code>plot_title.txt</code>, <code>velocity.json</code> and <code>configs</code> within the <code>0_inputs</code> folder.</li>
+</ul>
+<p><br></p>
+<p>📄 <code>inputs.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.81</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;mass&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/plot_title.txt</code>
+<div class="highlight"><pre><span></span><code>2D polygon shape
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/velocity.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;v0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">45.0</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/configs/solver_config.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;timestep&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/configs/display_config.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;fps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>All <em>fixed</em> input data have now been completed within the <code>Study_Shape</code> input database.</p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>├──<span class="w"> </span>studies.json
+<span class="w">    </span>├──<span class="w"> </span>Study_Shape/
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>0_inputs/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>plot_title.txt
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>velocity.json
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>configs/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>solver_config.json
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>display_config.json
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>inputs.json
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>inputs.csv
+<span class="w">    </span>└──<span class="w"> </span>Study_Velocity/
+<span class="w">        </span>├──<span class="w"> </span>0_inputs/
+<span class="w">        </span>├──<span class="w"> </span>inputs.json
+<span class="w">        </span>└──<span class="w"> </span>inputs.csv
+</code></pre></div></p>
+<p>At this stage of the <strong>App</strong> execution, the <strong>NUREMICS</strong> terminal prompts that all <em>fixed</em> input data are now properly set, but halts by indicating that datasets of <em>variable</em> input data must be defined (to conduct various experiments).</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>dataset<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/inputs.csv
+</code></pre></div></p>
+<p>Let's define three datasets identified as <code>Test1</code>, <code>Test2</code> and <code>Test3</code> within the <code>input.csv</code> file.</p>
+<p>📄 <code>inputs.csv</code></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>nb_sides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test1</td>
+<td></td>
+</tr>
+<tr>
+<td>Test2</td>
+<td></td>
+</tr>
+<tr>
+<td>Test3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We can now see that <strong>NUREMICS</strong> has properly identified the three defined datasets, but is waiting for the <em>variable</em> input data <code>nb_sides</code> to be set for each of them.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code><span class="w"> </span>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
+&gt;<span class="w"> </span>Test1<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test2<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test3<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>nb_sides
+
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span><span class="nb">set</span><span class="w"> </span>inputs<span class="w"> </span>:
+&gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/inputs.csv
+</code></pre></div></p>
+<p>Let's thus set some values of <code>nb_sides</code> for each defined dataset within the <code>input.csv</code> file.</p>
+<p>📄 <code>inputs.csv</code></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>nb_sides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Test2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Test3</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NUREMICS</strong> finally prompts that all input data are properly set for <code>Study_Shape</code>.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
+&gt;<span class="w"> </span>Test1<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test2<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test3<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+</code></pre></div></p>
+<p>The same job must be done to set the input data for <code>Study_Velocity</code>.</p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>├──<span class="w"> </span>studies.json
+<span class="w">    </span>├──<span class="w"> </span>Study_Shape/
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>0_inputs/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>plot_title.txt
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>velocity.json
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>configs/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>solver_config.json
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>display_config.json
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>inputs.json
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>inputs.csv
+<span class="w">    </span>└──<span class="w"> </span>Study_Velocity/
+<span class="w">        </span>├──<span class="w"> </span>0_inputs/
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>0_datasets/
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Test1/
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>velocity.json
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Test2/
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>velocity.json
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>Test3/
+<span class="w">        </span>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>velocity.json
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>plot_title.txt
+<span class="w">        </span>│<span class="w">   </span>└──<span class="w"> </span>configs/
+<span class="w">        </span>│<span class="w">       </span>├──<span class="w"> </span>solver_config.json
+<span class="w">        </span>│<span class="w">       </span>└──<span class="w"> </span>display_config.json
+<span class="w">        </span>├──<span class="w"> </span>inputs.json
+<span class="w">        </span>└──<span class="w"> </span>inputs.csv
+</code></pre></div>
+<br></p>
+<p>Let's here consider the same <em>fixed</em> input data <code>plot_title.txt</code> and <code>configs</code> as for the previous study <code>Study_Shape</code>.</p>
+<p><br></p>
+<p>📄 <code>inputs.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;nb_sides&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;gravity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.81</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>inputs.csv</code></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test1</td>
+</tr>
+<tr>
+<td>Test2</td>
+</tr>
+<tr>
+<td>Test3</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>📄 <code>0_inputs/0_datasets/Test1/velocity.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;v0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">45.0</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/0_datasets/Test2/velocity.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;v0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">45.0</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p>📄 <code>0_inputs/0_datasets/Test3/velocity.json</code>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;v0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">60.0</span>
+<span class="p">}</span>
+</code></pre></div>
+<br></p>
+<p><strong>NUREMICS</strong> is now prompting that all input data are properly set for both <code>Study_Shape</code> and <code>Study_Velocity</code>.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
+&gt;<span class="w"> </span>Test1<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test2<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+&gt;<span class="w"> </span>Test3<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
+&gt;<span class="w"> </span>Test1<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json
+&gt;<span class="w"> </span>Test2<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json
+&gt;<span class="w"> </span>Test3<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json
+</code></pre></div></p>
+<h3 id="get-results">Get Results</h3>
+<p>At this stage, <strong>NUREMICS</strong> is ready to run all the defined studies and generate the corresponding results.</p>
+<p>👤🔄🖥️
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>RUNNING<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test1<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">n_sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+&gt;<span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5
+&gt;<span class="w"> </span><span class="nv">title_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/plot_title.txt
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test2<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">n_sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+&gt;<span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5
+&gt;<span class="w"> </span><span class="nv">title_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/plot_title.txt
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test3<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">n_sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+&gt;<span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5
+&gt;<span class="w"> </span><span class="nv">title_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/plot_title.txt
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test1<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/velocity.json
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/1_PolygonGeometryProc/Test1/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test2<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/velocity.json
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/1_PolygonGeometryProc/Test2/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test3<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/velocity.json
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Shape/1_PolygonGeometryProc/Test3/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">n_sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+&gt;<span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.5
+&gt;<span class="w"> </span><span class="nv">title_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/plot_title.txt
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test1<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/0_datasets/Test1/velocity.json
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/1_PolygonGeometryProc/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test2<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/0_datasets/Test2/velocity.json
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/1_PolygonGeometryProc/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+
+<span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span><span class="w"> </span>ProjectileModelProc<span class="w"> </span><span class="p">|</span><span class="w"> </span>Test3<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span><span class="nv">gravity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-9.81
+&gt;<span class="w"> </span><span class="nv">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.1
+&gt;<span class="w"> </span><span class="nv">configs_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/configs
+&gt;<span class="w"> </span><span class="nv">velocity_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/0_inputs/0_datasets/Test3/velocity.json
+&gt;<span class="w"> </span><span class="nv">coords_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>.../DEMO_APP/Study_Velocity/1_PolygonGeometryProc/points_coordinates.csv
+&gt;&gt;&gt;<span class="w"> </span>START
+COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
+</code></pre></div></p>
+<p>The operator can then access the results in the output database generated by <strong>NUREMICS</strong> within the data tree. </p>
+<p>👤👁️💾
+<div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
+└──<span class="w"> </span>DEMO_APP/
+<span class="w">    </span>├──<span class="w"> </span>studies.json
+<span class="w">    </span>├──<span class="w"> </span>Study_Shape/
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>1_PolygonGeometryProc/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Test1/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>points_coordinates.csv
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>polygon_shape.png
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>Test2/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>points_coordinates.csv
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>polygon_shape.png
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>Test3/
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>points_coordinates.csv
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>polygon_shape.png
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>2_ProjectileModelProc/
+<span class="w">    </span>│<span class="w">       </span>├──<span class="w"> </span>Test1/
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">   </span>└──<span class="w"> </span>comparison/
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">       </span>├──<span class="w"> </span>results.xlsx
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">       </span>└──<span class="w"> </span>model_vs_theory.png
+<span class="w">    </span>│<span class="w">       </span>├──<span class="w"> </span>Test2/
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">   </span>└──<span class="w"> </span>comparison/
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">       </span>├──<span class="w"> </span>results.xlsx
+<span class="w">    </span>│<span class="w">       </span>│<span class="w">       </span>└──<span class="w"> </span>model_vs_theory.png
+<span class="w">    </span>│<span class="w">       </span>└──<span class="w"> </span>Test3/
+<span class="w">    </span>│<span class="w">           </span>└──<span class="w"> </span>comparison/
+<span class="w">    </span>│<span class="w">               </span>├──<span class="w"> </span>results.xlsx
+<span class="w">    </span>│<span class="w">               </span>└──<span class="w"> </span>model_vs_theory.png
+<span class="w">    </span>└──<span class="w"> </span>Study_Velocity/
+<span class="w">        </span>├──<span class="w"> </span>1_PolygonGeometryProc/
+<span class="w">        </span>│<span class="w">   </span>├──<span class="w"> </span>points_coordinates.csv
+<span class="w">        </span>│<span class="w">   </span>└──<span class="w"> </span>polygon_shape.png
+<span class="w">        </span>└──<span class="w"> </span>2_ProjectileModelProc/
+<span class="w">            </span>├──<span class="w"> </span>Test1/
+<span class="w">            </span>│<span class="w">   </span>└──<span class="w"> </span>comparison/
+<span class="w">            </span>│<span class="w">       </span>├──<span class="w"> </span>results.xlsx
+<span class="w">            </span>│<span class="w">       </span>└──<span class="w"> </span>model_vs_theory.png
+<span class="w">            </span>├──<span class="w"> </span>Test2/
+<span class="w">            </span>│<span class="w">   </span>└──<span class="w"> </span>comparison/
+<span class="w">            </span>│<span class="w">       </span>├──<span class="w"> </span>results.xlsx
+<span class="w">            </span>│<span class="w">       </span>└──<span class="w"> </span>model_vs_theory.png
+<span class="w">            </span>└──<span class="w"> </span>Test3/
+<span class="w">                </span>└──<span class="w"> </span>comparison/
+<span class="w">                    </span>├──<span class="w"> </span>results.xlsx
+<span class="w">                    </span>└──<span class="w"> </span>model_vs_theory.png
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
