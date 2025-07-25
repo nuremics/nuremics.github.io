@@ -799,12 +799,37 @@
   <img src="images/banner.jpg"
        style="margin-bottom: 0.5rem; display: block;">
 </a></p>
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3.12+-ffcd3b?style=flat&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/attrs-24.1.0+-000000?style=flat" />
+  <img src="https://img.shields.io/badge/Pandas-2.2.2+-0b0153?style=flat&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-2.0.1+-4dabcf?style=flat&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/termcolor-3.0.1+-0dbc5a?style=flat" />
+  <img src="https://img.shields.io/badge/GitPython-3.1.44+-f05030?style=flat&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/pytest-8.4.0+-009fe3?style=flat&logo=pytest&logoColor=white" />
+  <a href="https://nuremics.github.io/coverage"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Coverage-84%25-magenta?style=flat"/>
+  </a>
+</p>
+
 <p><strong>NUREMICS is an open-source Python framework for developing software-grade scientific workflows.</strong></p>
 <p>🧠 Code like a scientist — build like an engineer.<br>
 🧩 Modular workflows — no more tangled scripts.<br>
 🧪 Parametric exploration — configuration over code.<br>
 💾 Full traceability — everything written to disk.<br>
 🛠️ Industrial mindset — R&amp;D speed, software rigor.</p>
+<hr />
+<div style="text-align: center; margin-top: 2em;">
+  <iframe width="640" height="360"
+          src="https://www.youtube.com/embed/GbbZldfJHy0?autoplay=1&loop=1&playlist=GbbZldfJHy0&mute=1"
+          frameborder="0"
+          allow="autoplay"
+          allowfullscreen>
+  </iframe>
+</div>
+
 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
   <a href="getting-started"
      class="md-button md-button--primary">
@@ -827,37 +852,20 @@
 <p>The <strong>NUREMICS</strong> project is organized into two complementary repositories:</p>
 <ul>
 <li>
-<p><strong><code>nuremics</code></strong>: This repository is the core Python library, installable via <code>pip install</code>. It provides the foundational components to create modular and extensible software workflows.</p>
+<p><a href="https://github.com/nuremics/nuremics"><strong><code>nuremics</code></strong></a>: This repository is the core Python library. It provides the foundational components to create modular and extensible software workflows.</p>
 </li>
 <li>
-<p><strong><code>nuremics-labs</code></strong>:
-This repository contains examples of end-user applications built using the <strong>NUREMICS</strong> framework. It is intended to be <strong>forked</strong> by developers to initiate their own <code>nuremics-labs</code> project and build custom applications tailored to their specific use cases.</p>
+<p><a href="https://github.com/nuremics/nuremics-labs"><strong><code>nuremics-labs</code></strong></a>:
+This repository contains examples of end-user applications built using the <strong>NUREMICS</strong> framework. It is intended to be <strong>forked</strong> by developers to initiate their own <code>nuremics-labs</code> project and build custom scientific applications tailored to their specific use cases.</p>
 </li>
 </ul>
-<p>Developers are encouraged to treat <code>nuremics</code> as the core engine, and to use <code>nuremics-labs</code> as a starting point for developing and maintaining their own scientific software built on top of the <strong>NUREMICS</strong> framework.</p>
+<p>Developers are thus encouraged to treat <code>nuremics</code> as the core engine, and to use <code>nuremics-labs</code> as a starting point for developing and maintaining their own scientific software applications built on top of the <strong>NUREMICS</strong> framework.</p>
 <h2 id="project-philosophy">Project Philosophy</h2>
 <p><strong>NUREMICS</strong> is built with the ambition of bringing robust software engineering practices into Python-driven scientific research and development.</p>
 <p>While Python has become the de facto standard for scientific computing, its use in R&amp;D environments is often limited to ad-hoc scripts or notebooks. This leads to critical limitations: unclear definition of inputs, algorithms, and outputs; hard-coded parameters that hinder reproducibility; and inefficient workflows for exploring parameter spaces. As a result, scientific studies are often conducted in a “one-shot” manner, making them difficult to reproduce or extend. Output data is rarely traceable in a structured way, and codebases suffer from poor modularity, limited reusability, and frequent duplication. These challenges are compounded when teams grow, as scripts and notebooks are difficult to scale and maintain collaboratively, slowing down innovation and increasing the risk of undetected errors.</p>
 <p>In regulated industries where scientific results directly support product development (e.g., MedTech, Biotech, Aerospace), such fragility can have severe consequences. This is also why many of these industries remain hesitant to adopt Python and its powerful open ecosystem, due to concerns about reliability and long-term maintainability.</p>
 <p>In this landscape, <strong>NUREMICS</strong> emerges as a unifying framework designed to address these challenges: it provides a rigorous development structure that empowers scientists, engineers, and researchers to deliver high-quality scientific outcomes, and take their research to the next level. By enabling the safe integration of tools from the Python ecosystem, <strong>NUREMICS</strong> supports the engineering of domain-specific software tailored for scientific exploration and reproducibility, while upholding the discipline and maintainability required in high-stakes industrial environments.</p>
 <p>Inspired by <strong>IEC 62304</strong>, a standard originally developed for the engineering of medical device software, <strong>NUREMICS</strong> promotes structured, layered software development through clearly defined architectural components: systems, items, and units. This organization fosters clarity, modularity, and maintainability, while remaining well-suited to the iterative, exploratory nature of scientific development in Python. Although <strong>NUREMICS</strong> does not aim for full compliance with <strong>IEC 62304</strong>, it selectively incorporates its most relevant principles, striking a pragmatic balance between engineering rigor and the agility required in fast-paced research environments.</p>
-<!-- # Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files. -->
 
 
 
@@ -906,7 +914,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>

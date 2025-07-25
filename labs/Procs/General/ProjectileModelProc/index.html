@@ -832,11 +832,20 @@
 
   <h1>ProjectileModelProc</h1>
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Pandas-2.2.2+-0b0153?style=flat&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-2.0.1+-4dabcf?style=flat&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/matplotlib-3.10.3+-11557c" />
+  <img src="https://img.shields.io/badge/pygame-2.6.1+-08df1c" />
+  <img src="https://img.shields.io/badge/pymunk-7.0.1+-3398da" />
+  <img src="https://img.shields.io/badge/XlsxWriter-3.2.3+-207346" />
+</p>
+
 <h2 id="process">Process</h2>
-<p>Simulate a projectile trajectory and compare it with the analytical solution.<br>
-A/ <strong><code>simulate_projectile_motion</code>:</strong> Run the physical simulation of a projectile.<br>
-B/ <strong><code>calculate_analytical_trajectory</code>:</strong> Compute the theoretical trajectory using analytical equations.<br>
-C/ <strong><code>compare_model_vs_analytical_trajectories</code>:</strong> Plot and save the comparison between simulated (model) and theoretical trajectories.</p>
+<p>Simulate the motion of a projectile and compare its trajectory with the analytical solution.<br>
+A/ <strong><code>simulate_projectile_motion</code>:</strong> Simulate the motion of a 2D rigid body under gravity projected with an initial velocity.<br>
+B/ <strong><code>calculate_analytical_trajectory</code>:</strong> Calculate the theoretical trajectory of a projectile using analytical equations.<br>
+C/ <strong><code>compare_model_vs_analytical_trajectories</code>:</strong> Plot and save the comparison between simulated (model) and theoretical projectile trajectories.</p>
 <pre class="mermaid"><code>erDiagram
   **Parameters** ||--|| **Inputs** : provides
   **Paths** ||--|| **Inputs** : provides
@@ -862,12 +871,12 @@ C/ <strong><code>compare_model_vs_analytical_trajectories</code>:</strong> Plot 
   }</code></pre>
 <h2 id="input-parameters">Input Parameter(s)</h2>
 <ul>
-<li><strong><code>gravity</code>:</strong> Acceleration due to gravity (can be positive or negative).</li>
-<li><strong><code>mass</code>:</strong> Mass of the projectile (used in the simulation).</li>
+<li><strong><code>gravity</code>:</strong> Gravitational acceleration (m/s²).</li>
+<li><strong><code>mass</code>:</strong> Mass of the body (kg).</li>
 </ul>
 <h2 id="input-paths">Input Path(s)</h2>
 <ul>
-<li><strong><code>velocity_file</code>:</strong> File containing the velocity initial conditions (v0, angle).</li>
+<li><strong><code>velocity_file</code>:</strong> File containing the velocity initial conditions {v0 (m/s); angle (°)}.</li>
 <li><strong><code>configs_folder/</code></strong><br>
   <strong><code>solver_config.json</code>:</strong> File containing the parameters for solver configuration.<br>
   <strong><code>display_config.json</code>:</strong> File containing the parameters for display configuration.</li>
@@ -933,7 +942,7 @@ C/ <strong><code>compare_model_vs_analytical_trajectories</code>:</strong> Plot 
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>

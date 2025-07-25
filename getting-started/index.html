@@ -283,9 +283,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-demo_app" class="md-nav__link">
+  <a href="#run-the-demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Run the DEMO_APP
+      Run the demo
     </span>
   </a>
   
@@ -770,9 +770,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-the-demo_app" class="md-nav__link">
+  <a href="#run-the-demo" class="md-nav__link">
     <span class="md-ellipsis">
-      Run the DEMO_APP
+      Run the demo
     </span>
   </a>
   
@@ -796,30 +796,69 @@
 
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="installation">Installation</h2>
-<p>Once the present <code>nuremics-labs</code> repository has been forked and cloned to your local machine, installation proceeds as follows:</p>
 <ol>
-<li><strong>(Recommended) Create a dedicated coding environment.</strong> While not mandatory, using <a href="https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html">micromamba</a> is highly recommended for fast, reproducible, and lightweight environment management:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>micromamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>nrs-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-micromamba<span class="w"> </span>activate<span class="w"> </span>nrs-env
+<li>
+<p><strong>Fork and clone the <a href="https://github.com/nuremics/nuremics-labs" target="_blank"><code>nuremics-labs</code></a> repository.</strong> You have two options to get started:</p>
+<ul>
+<li>
+<p>Option A (recommended): Fork the repository to your own GitHub or GitLab account, then clone your fork. This allows you to modify the code and push your changes to your personal version of the project.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>nuremics-labs<span class="w">  </span>→<span class="w">  </span>fork<span class="w">  </span>→<span class="w">  </span>your-labs<span class="w">  </span>→<span class="w">  </span>clone
 </code></pre></div>
-<ol>
-<li><strong>Install the required dependencies.</strong> Use <code>pip</code> to install the packages listed in the <code>requirements.txt</code> file. If you need additional packages to support domain-specific application development, remember to add them to this file before running the command:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</li>
+<li>
+<p>Option B (quick start): If you just want to try the framework without making changes, you can simply clone the main repository directly.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HTTPS</label><label for="__tabbed_1_2">SSH</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nuremics/nuremics-labs.git
 </code></pre></div>
-<ol>
-<li><strong>Set the environment variable.</strong> Add the absolute path of the <code>src</code> directory from your cloned <code>nuremics-labs</code> repository to the <code>PYTHONPATH</code> environment variable of your local system. If <code>PYTHONPATH</code> does not already exist, please create it. This allows Python to locate all project modules correctly.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>/absolute/path/to/nuremics-labs/src
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:nuremics/nuremics-labs.git
 </code></pre></div>
-<ol>
-<li><strong>(Optional) Define a default working directory.</strong> It is also suggested to define another environment variable named <code>WORKING_DIR</code>, which serves as the default root folder where all your <strong>Apps</strong> write their results. This becomes particularly useful when working on multiple <strong>Apps</strong>, as it allows you to consistently manage output locations across your projects.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>/absolute/path/to/default/working_dir
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create the NUREMICS virtual environment.</strong> From the root directory of your cloned repository, use either conda or micromamba to create and install the environment using the provided <code>environment.yml</code> file.</p>
+<p><em>- Creation -</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Conda</label><label for="__tabbed_2_2">Micromamba</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </code></pre></div>
-<p>You're now ready to begin your coding journey with <strong>NUREMICS®</strong> 🧬</p>
-<h2 id="run-the-demo_app">Run the DEMO_APP</h2>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>micromamba<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</code></pre></div>
+</div>
+</div>
+</div>
+<p><em>- Activation -</em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Conda</label><label for="__tabbed_3_2">Micromamba</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>nrs-env
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>micromamba<span class="w"> </span>activate<span class="w"> </span>nrs-env
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>This will create a reproducible virtual environment with all required dependencies, including the <code>nuremics</code> core package itself.</p>
+</li>
+<li>
+<p><strong>Install the demo application.</strong> Each application in <code>nuremics-labs</code> can be installed independently. You can start by installing the <a href="../labs/Apps/General/DEMO_APP/" target="_blank">DEMO_APP</a>.</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>.<span class="o">[</span>DEMO_APP<span class="o">]</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="run-the-demo">Run the demo</h2>
 
 
 
@@ -868,7 +907,7 @@ micromamba<span class="w"> </span>activate<span class="w"> </span>nrs-env
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>

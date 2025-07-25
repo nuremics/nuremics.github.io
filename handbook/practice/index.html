@@ -1117,24 +1117,23 @@
 <div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 </code></pre></div>
 <p>We then import the <code>Application</code> class from the <strong>NUREMICS</strong> framework, which serves as the container and manager to define a workflow composed of multiple <strong>Procs</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 </code></pre></div>
 <p>We now import the two <strong>Procs</strong>, <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>, that we previously implemented. These will be the building blocks to assemble into our final <strong>App</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 </code></pre></div>
 <p>The source code of the <strong>App</strong> then adopts the structure of a standard Python script, which can both be executed directly or imported as a module. This is achieved by defining a <code>main()</code> function and guarding it with the typical <code>if __name__ == "__main__":</code> statement.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Application logic here</span>
@@ -1151,12 +1150,12 @@
 <p><code>studies</code>: a list of study names that the end-user wants to perform with the <strong>App</strong>.</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1190,12 +1189,12 @@
 <p>Inside the <code>main()</code> function, we define a list called <code>workflow</code> which contains the sequence of <strong>Procs</strong> to be executed, in the order specified. This list is made up of dictionaries, where each dictionary describes the characteristics of a particular <strong>Proc</strong>.</p>
 <p>Let's first define the key <code>"process"</code> of each dictionary, which specifies the <strong>Proc</strong> class (previously imported, e.g., <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>) to instantiate and execute within the <strong>App</strong> workflow.</p>
 <p>This dictionary-based structure offers flexibility to easily add more parameters or options later by simply adding new keys to each dictionary in the workflow.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1252,12 +1251,12 @@
 </li>
 </ul>
 <p>Once the <code>Application</code> object is created, calling <code>app()</code> launches the workflow execution of all the defined <strong>Procs</strong> for each study.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1397,12 +1396,12 @@ DEMO_APP_____
 <span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>all<span class="w"> </span>input<span class="w"> </span>parameters<span class="w"> </span>either<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;user_params&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;hard_params&quot;</span>.
 </code></pre></div></p>
 <p>The <strong>input parameters</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"user_params"</code> and/or <code>"hard_params"</code> keys in its corresponding dictionary entry inside the <code>workflow</code> list.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1474,12 +1473,12 @@ title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class
 <span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>all<span class="w"> </span>input<span class="w"> </span>paths<span class="w"> </span>either<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;user_paths&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;required_paths&quot;</span>.
 </code></pre></div></p>
 <p>The <strong>input paths</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"user_paths"</code> and/or <code>"required_paths"</code> keys in its corresponding dictionary entry inside the workflow list.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1558,12 +1557,12 @@ fig_file<span class="w">    </span>-----<span class="o">||</span>-----<span clas
 </code></pre></div></p>
 <p>The <strong>output paths</strong> of the <strong>Proc</strong> <code>PolygonGeometryProc</code> can be properly mapped within the <strong>App</strong> by defining the <code>"output_paths"</code> key in its corresponding dictionary entry inside the workflow list.</p>
 <p>In the same way, we also complete the mapping for the <strong>Proc</strong> <code>ProjectileModelProc</code> by providing all required entries: <code>"user_params"</code> and/or <code>"hard_params"</code>, <code>"user_paths"</code> and/or <code>"required_paths"</code>, <code>"output_paths"</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+
+<span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span>
     <span class="n">working_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -2315,7 +2314,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>

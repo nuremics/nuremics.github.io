@@ -832,10 +832,16 @@
 
   <h1>PolygonGeometryProc</h1>
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Pandas-2.2.2+-0b0153?style=flat&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-2.0.1+-4dabcf?style=flat&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/matplotlib-3.10.3+-11557c" />
+</p>
+
 <h2 id="process">Process</h2>
 <p>Generate and plot a regular 2D polygon shape.<br>
 A/ <strong><code>generate_polygon_shape</code>:</strong> Generate the 2D coordinates of a regular polygon.<br>
-B/ <strong><code>plot_polygon_shape</code>:</strong> Plot the shape with a title read from an external file.</p>
+B/ <strong><code>plot_polygon_shape</code>:</strong> Plot a closed 2D polygon from a set of points.</p>
 <pre class="mermaid"><code>erDiagram
   **Parameters** ||--|| **Inputs** : provides
   **Paths** ||--|| **Inputs** : provides
@@ -859,7 +865,7 @@ B/ <strong><code>plot_polygon_shape</code>:</strong> Plot the shape with a title
   }</code></pre>
 <h2 id="input-parameters">Input Parameter(s)</h2>
 <ul>
-<li><strong><code>radius</code>:</strong> Radius of the polygon.</li>
+<li><strong><code>radius</code>:</strong> Radius (m) of the circumscribed circle of the polygon.</li>
 <li><strong><code>n_sides</code>:</strong> Number of sides of the polygon.</li>
 </ul>
 <h2 id="input-paths">Input Path(s)</h2>
@@ -925,7 +931,7 @@ B/ <strong><code>plot_polygon_shape</code>:</strong> Plot the shape with a title
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>

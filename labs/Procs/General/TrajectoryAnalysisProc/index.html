@@ -812,9 +812,15 @@
 
   <h1>TrajectoryAnalysisProc</h1>
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Pandas-2.2.2+-0b0153?style=flat&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/matplotlib-3.10.3+-11557c" />
+  <img src="https://img.shields.io/badge/openpyxl-3.1.5+-010043" />
+</p>
+
 <h2 id="process">Process</h2>
-<p>Compare simulated (model) and theoretical trajectories of a projectile across all experiments.<br>
-A/ <strong><code>plot_overall_model_vs_theory</code>:</strong> Generate overall comparative plot of simulated (model) and theoritical trajectories.</p>
+<p>Perform overall comparisons between simulated (model) and theoretical trajectories.<br>
+A/ <strong><code>plot_overall_model_vs_theory</code>:</strong> Generate overall comparative plots of simulated (model) and theoritical trajectories.</p>
 <pre class="mermaid"><code>erDiagram
   **Analysis** ||--|| **Inputs** : provides
   **Inputs** ||--|| **TrajectoryAnalysisProc** : feeds
@@ -832,11 +838,11 @@ A/ <strong><code>plot_overall_model_vs_theory</code>:</strong> Generate overall 
 <h2 id="input-analysis">Input Analysis</h2>
 <ul>
 <li><strong><code>comp_folder/</code></strong><br>
-  <strong><code>results.xlsx</code>:</strong> File containing simulated (model) and theoritical trajectories.</li>
+  <strong><code>results.xlsx</code>:</strong> File containing both trajectories.</li>
 </ul>
 <h2 id="output-paths">Output Path(s)</h2>
 <ul>
-<li><strong><code>fig_file</code>:</strong> Image comparing both trajectories across all experiments.</li>
+<li><strong><code>fig_file</code>:</strong> Image containing overall comparative plots.</li>
 </ul>
 <hr />
 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
@@ -892,7 +898,7 @@ A/ <strong><code>plot_overall_model_vs_theory</code>:</strong> Generate overall 
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
