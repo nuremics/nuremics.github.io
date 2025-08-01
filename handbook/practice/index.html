@@ -954,6 +954,7 @@
 <ul>
 <li>A visual banner indicating the launch of a <strong>NUREMICS App</strong>.</li>
 <li>A structured overview of the assembled workflow, with its constitutive <strong>Procs</strong> and <strong>Ops</strong>, and their order of execution within the <strong>App</strong> workflow.</li>
+<li>A summary of the <strong>App</strong>'s I/O interface. This summary includes all declared user parameters (<code>"user_params"</code>) and user paths (<code>"user_paths"</code>) required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing you to understand what data you need to provide and what results to expect.</li>
 </ul>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="w">                      </span>___
@@ -992,6 +993,25 @@ DEMO_APP_____
 <span class="w">             </span><span class="p">|</span>
 <span class="w">             </span><span class="p">|</span>_____TrajectoryAnalysisProc_____
 <span class="w">                                              </span><span class="p">|</span>_____plot_overall_model_vs_theory
+
+&gt;<span class="w"> </span>INPUTS<span class="w"> </span>&lt;
+
+<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Parameters<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>int<span class="o">)</span>
+&gt;<span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
+&gt;<span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
+
+<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Paths<span class="w"> </span><span class="p">|</span>
+&gt;<span class="w"> </span>plot_title.txt
+&gt;<span class="w"> </span>velocity.json
+&gt;<span class="w"> </span>configs
+
+&gt;<span class="w"> </span>OUTPUTS<span class="w"> </span>&lt;
+
+&gt;<span class="w"> </span>points_coordinates.csv
+&gt;<span class="w"> </span>polygon_shape.png
+&gt;<span class="w"> </span>comparison
+&gt;<span class="w"> </span>overall_comparisons.png
 </code></pre></div></p>
 <h3 id="specify-working-directory">Specify Working Directory</h3>
 <p>If this is your first time launching a <strong>NUREMICS App</strong>, <strong>NUREMICS</strong> will prompt you to specify the working directory (<code>"working_dir"</code>) for the <strong>App</strong>. This directory serves as the root location where all input/output data, logs, and results will be stored.</p>
@@ -1029,34 +1049,12 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
 └──<span class="w"> </span>DEMO_APP/<span class="w"> </span>➕<span class="w"> </span><span class="c1">#generated</span>
 </code></pre></div></p>
-<hr />
-<p>At this stage, the <strong>NUREMICS</strong> terminal finally displays a clear summary of the <strong>App</strong>'s I/O interface. This summary includes all declared user parameters (<code>"user_params"</code>) and user paths (<code>"user_paths"</code>) required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing you to understand what data you need to provide and what results to expect.</p>
-<p>👤🔄🖥️
-<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>INPUTS<span class="w"> </span>&lt;
-
-<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Parameters<span class="w"> </span><span class="p">|</span>
-&gt;<span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>int<span class="o">)</span>
-&gt;<span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
-&gt;<span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>float<span class="o">)</span>
-
-<span class="p">|</span><span class="w"> </span>User<span class="w"> </span>Paths<span class="w"> </span><span class="p">|</span>
-&gt;<span class="w"> </span>plot_title.txt
-&gt;<span class="w"> </span>velocity.json
-&gt;<span class="w"> </span>configs
-
-&gt;<span class="w"> </span>OUTPUTS<span class="w"> </span>&lt;
-
-&gt;<span class="w"> </span>points_coordinates.csv
-&gt;<span class="w"> </span>polygon_shape.png
-&gt;<span class="w"> </span>comparison
-&gt;<span class="w"> </span>overall_comparisons.png
-</code></pre></div></p>
 <h3 id="declare-studies">Declare Studies</h3>
 <p><strong>NUREMICS</strong> then prompts you to declare the different studies you want to carry out with the <strong>App</strong>.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
 
-<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>study<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span><span class="nb">declare</span><span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>study<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
 &gt;<span class="w"> </span>.../nuremics-labs/.nuremics/settings.json
 </code></pre></div></p>
 <p>This must be declared in the same <code>settings.json</code> file located at the root of your <code>nuremics-labs</code> repository, as a list of identifiers corresponding to the different studies you want to carry out. You can declare as many studies as needed, each representing a self-contained parametric study.</p>
@@ -1343,7 +1341,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <span class="p">|</span><span class="w"> </span>Study_Shape<span class="w"> </span><span class="p">|</span>
 &gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
 
-<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>dataset<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span><span class="nb">declare</span><span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>experiment<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
 &gt;<span class="w"> </span>.../DEMO_APP/Study_Shape/inputs.csv
 </code></pre></div></p>
 <p>Let's first declare three experiments in the <code>inputs.csv</code> file.</p>
@@ -1471,7 +1469,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>Study_Velocity<span class="w"> </span><span class="p">|</span>
 &gt;<span class="w"> </span>Common<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>nb_sides<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>gravity<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>mass<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>plot_title.txt<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>configs
 
-<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>dataset<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
+<span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span><span class="nb">declare</span><span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>experiment<span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
 &gt;<span class="w"> </span>.../DEMO_APP/Study_Velocity/inputs.csv
 </code></pre></div></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">📄 <code>&lt;working_dir&gt;/DEMO_APP/Study_Velocity/inputs.csv</code></label></div>
