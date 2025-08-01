@@ -1047,14 +1047,14 @@
 <p><strong>Run the <code>DEMO_APP</code></strong>. From the <code>nuremics-labs/src/labs/apps/general/DEMO_APP</code> folder, run the <strong>App</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">src</span><span class="o">/</span><span class="n">labs</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">general</span><span class="o">/</span><span class="n">DEMO_APP</span><span class="o">/</span><span class="n">system</span><span class="o">.</span><span class="n">py</span>
 </code></pre></div>
-<p>This will launch both studies and store results in <code>&lt;nrs_working_dir&gt;/DEMO_APP</code>.</p>
+<p>This will launch both studies and store results in <code>nrs_working_dir/DEMO_APP</code>.</p>
 </li>
 </ol>
 <h2 id="play-with-it">Play with it</h2>
 <p>Now that you've successfully run the <code>DEMO_APP</code> and reproduced the scientific results of the <code>Study_Shape</code> and <code>Study_Velocity</code> studies, let's play with it!</p>
 <h3 id="skip-a-study">Skip a study</h3>
 <p>Want to skip the execution of a specific study when running your <strong>App</strong>? Set its <code>"execute"</code> field to <code>false</code> in the <code>studies.json</code> file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/studies.json</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">📄 <code>nrs_working_dir/DEMO_APP/studies.json</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1073,7 +1073,7 @@
 </div>
 <h3 id="skip-a-process">Skip a process</h3>
 <p>Want to skip the execution of a specific process (<strong>Proc</strong>) within a study? Set its <code>"execute"</code> field to <code>false</code> in the <code>process.json</code> file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/process.json</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/process.json</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1096,7 +1096,7 @@
 </div>
 <h3 id="silent-a-process">Silent a process</h3>
 <p>Want a specific process (<strong>Proc</strong>) to be executed in silent mode within a study? Set its <code>"silent"</code> field to <code>true</code> in the <code>process.json</code> file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/process.json</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/process.json</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1119,7 +1119,7 @@
 </div>
 <h3 id="skip-an-experiment">Skip an experiment</h3>
 <p>Want to skip the execution of a specific experiment in a study? Set the value of the <code>EXECUTE</code> flag to <code>0</code> in the <code>inputs.csv</code> file for the experiment you want to skip.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/inputs.csv</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/inputs.csv</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1131,7 +1131,7 @@ Test1,1
 </code></pre></div>
 <h3 id="run-a-new-experiment">Run a new experiment</h3>
 <p>Want to run a new experiment in a study? Add a new line with a unique <code>ID</code> to the <code>inputs.csv</code> file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/inputs.csv</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/inputs.csv</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1143,7 +1143,7 @@ Test3,1
 <span class="hll">MyExp,1
 </span></code></pre></div>
 <p>Then run the <strong>App</strong>, which will automatically generate the corresponding input folder where you must upload the required <code>velocity.json</code> file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/0_inputs/0_datasets/MyExp/velocity.json</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/0_inputs/0_datasets/MyExp/velocity.json</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1156,7 +1156,7 @@ Test3,1
 </div>
 <h3 id="modify-analysis-settings">Modify analysis settings</h3>
 <p>Want to customize the overall analysis of experiment results for a given study? Use the <code>analysis.json</code> file to control how each one is handled.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">📄 <code>&lt;nrs_working_dir&gt;/DEMO_APP/Study_Velocity/analysis.json</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">📄 <code>nrs_working_dir/DEMO_APP/Study_Velocity/analysis.json</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
