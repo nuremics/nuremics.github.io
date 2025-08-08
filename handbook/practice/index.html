@@ -895,7 +895,7 @@
   
   
   <span class="md-ellipsis">
-    CM&S
+    Modeling & Simulation
     
   </span>
   
@@ -906,7 +906,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            CM&S
+            Modeling & Simulation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -946,6 +946,75 @@
   
   <span class="md-ellipsis">
     Cantilever subjected to end shear force
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI & Data Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI & Data Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-in-public/aids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
     
   </span>
   
@@ -2120,16 +2189,16 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 <hr />
 <p>We now import two <strong>Procs</strong>, <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>, previously implemented. These will be the building blocks to assemble into our final <strong>App</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 </code></pre></div>
 <hr />
 <p>The source code of the <strong>App</strong> then adopts the structure of a standard Python script, which can both be executed directly or imported as a module. This is achieved by defining a <code>main()</code> function and guarding it with the typical <code>if __name__ == "__main__":</code> statement.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
@@ -2143,8 +2212,8 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 <p>Inside the <code>main()</code> function, we define a list called <code>workflow</code> which contains the sequence of <strong>Procs</strong> to be executed, in the order specified. This list is made up of dictionaries, where each dictionary describes the assembly characteristics of each individual <strong>Proc</strong> into the <strong>App</strong>. This dictionary-based structure offers flexibility to easily add more parameters or options later by simply adding new keys to each dictionary in the workflow.</p>
 <p>Let's first define the key <code>"process"</code> of each dictionary, which specifies the <strong>Proc</strong> class (previously imported, e.g., <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code>) to instantiate and execute within the <strong>App</strong> workflow.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 
@@ -2182,8 +2251,8 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">git</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 <span class="n">repo</span> <span class="o">=</span> <span class="n">git</span><span class="o">.</span><span class="n">Repo</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2265,8 +2334,8 @@ DEMO_APP_____
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">git</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 <span class="n">repo</span> <span class="o">=</span> <span class="n">git</span><span class="o">.</span><span class="n">Repo</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2321,8 +2390,8 @@ title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">git</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 <span class="n">repo</span> <span class="o">=</span> <span class="n">git</span><span class="o">.</span><span class="n">Repo</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2386,8 +2455,8 @@ fig_file<span class="w">    </span>-----<span class="o">||</span>-----<span clas
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">git</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Application</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.PolygonGeometryProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">procs.general.ProjectileModelProc.item</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.PolygonGeometryProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolygonGeometryProc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">labs.procs.general.ProjectileModelProc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjectileModelProc</span>
 
 <span class="n">APP_NAME</span> <span class="o">=</span> <span class="s2">&quot;DEMO_APP&quot;</span>
 <span class="n">repo</span> <span class="o">=</span> <span class="n">git</span><span class="o">.</span><span class="n">Repo</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">search_parent_directories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
