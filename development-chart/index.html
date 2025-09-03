@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../build-in-public/aids/">
       
-      
-        <link rel="next" href="theory/">
       
       
       <link rel="icon" href="../images/logo.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Overview - NUREMICS®</title>
+        <title>Development Chart - NUREMICS®</title>
       
     
     
@@ -71,11 +69,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#handbook" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Development Chart
             
           </span>
         </div>
@@ -243,20 +236,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -272,7 +263,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Handbook
@@ -283,19 +274,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../handbook/" class="md-nav__link">
         
   
   
@@ -306,7 +288,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -319,7 +300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="theory/" class="md-nav__link">
+      <a href="../handbook/theory/" class="md-nav__link">
         
   
   
@@ -342,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/" class="md-nav__link">
+      <a href="../handbook/practice/" class="md-nav__link">
         
   
   
@@ -1103,10 +1084,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../development-chart/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1117,6 +1105,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1138,8 +1127,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1155,66 +1142,193 @@
 
 
 
-<h1 id="handbook">Handbook</h1>
-<div style="text-align: center; margin-bottom: 2em;">
-  <iframe width="640" height="360"
-          src="https://www.youtube.com/embed/HyUkWXGqEIM?autoplay=1&loop=1&playlist=HyUkWXGqEIM&mute=1"
-          frameborder="0"
-          allow="autoplay"
-          allowfullscreen>
-  </iframe>
-</div>
+  <h1>Development Chart</h1>
 
-<p>The software architecture of <strong>NUREMICS</strong> is illustrated in the diagram below. It follows the layered structure recommended by the <strong>IEC 62304</strong> standard, distinguishing between <em>software systems</em>, <em>software items</em>, and <em>software units</em>. This representation provides a clear, high-level view of how the different software components of the project are organized, and how they interact within a structured yet flexible development framework. It also highlights the relationship between the core framework (<code>nuremics</code>) and its domain-specific applications (<code>nuremics-labs</code>), emphasizing the modular and extensible nature of the overall architecture.</p>
-<p>In the context of <strong>NUREMICS</strong>:</p>
-<ul>
-<li>
-<p>A <em>software unit</em> corresponds to a single, testable function. It is the smallest building block of logic.</p>
-</li>
-<li>
-<p>A <em>software item</em> typically takes the form of a Python class that encapsulates related functions (units) to serve a specific purpose.</p>
-</li>
-<li>
-<p>A <em>software system</em> refers to a complete application designed to be executed by an end-user, replacing traditional scripts or notebooks.</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/julien-siguenza/nuremics-data/main/assets/architecture.svg" alt="NUREMICS Architecture" width="100%"></p>
-<p>In practice, the core framework <code>nuremics</code> is composed of three foundational <em>software items</em>:</p>
-<ul>
-<li>
-<p>The <code>Process</code> class defines a generic process component. It provides a flexible base structure that can be extended to implement domain-specific processes within <code>nuremics-labs</code>.</p>
-</li>
-<li>
-<p>The <code>Workflow</code> class orchestrates the execution of multiple processes in a defined sequential order. It encapsulates the coordination logic and manages the progression of tasks throughout the workflow.</p>
-</li>
-<li>
-<p>The <code>Application</code> class is the top-level component. It instantiates and executes a workflow, acting as the main entry point for any end-user application developed within <code>nuremics-labs</code>.</p>
-</li>
-</ul>
-<p>In <code>nuremics-labs</code>, two main types of software components are developed to build domain-specific applications:</p>
-<ul>
-<li>
-<p><strong>Procs</strong> (<em>software items</em>) — such as <code>Proc1, Proc2, ..., ProcX</code> — are implemented by subclassing the core <code>Process</code> class. Each <strong>Proc</strong> is defined as a class that encapsulates several functions (<em>software units</em>), which represent elementary operations (<strong>Ops</strong>) executed sequentially within the <code>__call__</code> method of the <strong>Proc</strong>. This design enables the creation of independent, reusable <strong>Procs</strong> that can be executed on their own or integrated into larger workflows.</p>
-</li>
-<li>
-<p><strong>Apps</strong> (<em>software systems</em>) — such as <code>APP1, APP2, ..., APPX</code> — are the end-user-facing software applications. They import and assemble the required <strong>Procs</strong>, executing them in a defined order through the <code>Workflow</code> class, by instantiating the <code>Application</code> class. This modular architecture promotes flexibility and reusability, allowing the same <strong>Procs</strong> to be used across multiple <strong>Apps</strong> tailored to different scientific purposes.</p>
-</li>
-</ul>
-<hr />
-<div align="center" style="font-weight: bold; font-size: 1.0rem;">
-Explore NUREMICS in:
-</div>
+<p>The chart below outlines the key phases in the scientific development of <strong>NUREMICS Apps</strong>, along with the roles involved in each phase. Each role is associated with specific responsibilities and expertise. This structure ensures a reproducible and high-quality development process.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Role</th>
+<th>Python Expertise</th>
+<th>Science / Domain Expertise</th>
+<th>Main Responsabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use Case</td>
+<td>Requirements Scientist</td>
+<td>❌</td>
+<td>✅</td>
+<td>Defines the scientific/business need into a clear use case, constituting the Functional Requirement Specifications (FRS).</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Workflow Architect</td>
+<td>✅</td>
+<td>❌</td>
+<td>Translate the use case into a structured scientific workflow, formalizing the Software Requirement Specifications (SRS).</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>Scientific Developer</td>
+<td>✅</td>
+<td>✅</td>
+<td>Implement the software items constituting the workflow in compliance with the defined SRS.</td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Software Developer</td>
+<td>✅</td>
+<td>❌</td>
+<td>Support the implementation, optimize the code, and develop tests for integration and Software Quality Assurance (SQA).</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>End-User Scientist</td>
+<td>❌</td>
+<td>✅</td>
+<td>Execute workflow to produce, interpret, and report scientific results.</td>
+</tr>
+</tbody>
+</table>
+<p>✅ Required <br>
+❌ Not required</p>
+<!-- ---
 
-<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-  <a href="theory/" class="md-button md-button--primary">
-    Theory
-  </a>
-  <a href="practice/" class="md-button md-button--primary">
-    Practice
-  </a>
-</div>
+## 1. Scientific Requirement Expert / Use Case Author
 
-<hr />
+**Phase:** Use case definition / specification
+
+**Role Overview:**  
+Responsible for defining the scientific or business problem to solve and documenting it in the form of a use case. This serves as a functional specification and guides the subsequent development process.
+
+**Responsibilities:**
+
+- Define the scientific or business problem to solve.
+- Write the use case as a structured document or scientific article.
+- Identify expected outcomes or performance indicators.
+
+**Skills:**
+
+- Domain expertise (science or business)
+- Ability to formalize user needs
+- Scientific writing
+
+**Python:** Not required  
+**Science / Domain Knowledge:** Required
+
+---
+
+## 2. Scientific Workflow Architect / Lead Framework Developer
+
+**Phase:** Workflow design and architecture
+
+**Role Overview:**  
+Responsible for translating the use case into a structured scientific workflow in **nuRemics** and defining the overall software architecture.
+
+**Responsibilities:**
+- Decompose workflows into modular software units with defined inputs/outputs.
+- Define software architecture and interfaces between modules.
+- Ensure consistency with **nuRemics** best practices.
+- Train and supervise developers on the framework and architecture.
+
+**Skills:**
+- Software engineering
+- Advanced Python programming
+- Expertise in the nuRemics framework
+- Scientific workflow design
+
+**Python:** Advanced  
+**Science / Domain Knowledge:** Not required but helpful
+
+---
+
+## 3. Scientific Programmer / Unit Lead
+
+**Phase:** Unit implementation
+
+**Role Overview:**  
+Responsible for implementing software units that accurately reflect the scientific or business requirements of the use case.
+
+**Responsibilities:**
+- Develop software units according to specifications.
+- Validate scientific correctness of calculations or data processing.
+- Supervise support developers (Python developers without domain expertise).
+
+**Skills:**
+- Scientific or domain knowledge
+- Scientific programming in Python
+
+**Python:** Required  
+**Science / Domain Knowledge:** Required
+
+---
+
+## 4. Python Developer / Software Engineer
+
+**Phase:** Unit implementation and integration
+
+**Role Overview:**  
+Supports the development of software units, ensuring code quality and efficiency.
+
+**Responsibilities:**
+- Implement technical parts of the software units.
+- Optimize code performance.
+- Develop unit tests and support CI/CD integration.
+- Assist Scientific Programmers as needed.
+
+**Skills:**
+- Python programming
+- Software development best practices
+- Testing and CI/CD
+
+**Python:** Required  
+**Science / Domain Knowledge:** Not required (optional)
+
+---
+
+## 5. Test / Validation Lead
+
+**Phase:** Unit testing and CI/CD integration
+
+**Role Overview:**  
+Responsible for ensuring robustness, reproducibility, and quality of software units.
+
+**Responsibilities:**
+- Define and execute unit and integration tests.
+- Verify compliance with specifications and expected outcomes.
+- Supervise CI/CD pipelines for integration.
+
+**Skills:**
+- Python programming
+- Software testing and CI/CD
+- Basic understanding of scientific requirements for validation
+
+**Python:** Required  
+**Science / Domain Knowledge:** Supported by Scientific Programmer
+
+---
+
+## 6. End-User / Scientific Producer
+
+**Phase:** Application use and scientific production
+
+**Role Overview:**  
+Uses the developed application to generate scientific results and interpret them.
+
+**Responsibilities:**
+- Execute scientific workflows using the application.
+- Interpret results and write discussions or conclusions.
+- Report issues or inconsistencies in the software outputs.
+
+**Skills:**
+- Domain expertise (science or business)
+- Ability to analyze and interpret results
+
+**Python:** Not required  
+**Science / Domain Knowledge:** Required -->
 
 
 
