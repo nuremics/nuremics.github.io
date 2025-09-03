@@ -20,7 +20,7 @@
     
     
       
-        <title>Theory - NUREMICS®</title>
+        <title>Theory - nuRemics</title>
       
     
     
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="NUREMICS®" class="md-header__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+    <a href="../.." title="nuRemics" class="md-header__button md-logo" aria-label="nuRemics" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -101,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            NUREMICS®
+            nuRemics
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -185,12 +185,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="NUREMICS®" class="md-nav__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+    <a href="../.." title="nuRemics" class="md-nav__button md-logo" aria-label="nuRemics" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
     </a>
-    NUREMICS®
+    nuRemics
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1347,7 +1347,7 @@
 
 <h1 id="theory">Theory</h1>
 <h2 id="design-patterns">Design Patterns</h2>
-<p>Let’s introduce the core design patterns behind <strong>Procs</strong> and <strong>Apps</strong> in <strong>NUREMICS</strong>.</p>
+<p>Let’s introduce the core design patterns behind <strong>Procs</strong> and <strong>Apps</strong> in <strong>nuRemics</strong>.</p>
 <h3 id="proc">Proc</h3>
 <p>A <strong>Proc</strong> can be seen as an algorithmic box which processes some input data and produces corresponding output data.</p>
 <p>The input data typically fall into two main categories:</p>
@@ -1684,7 +1684,7 @@
   classDef blueBox fill:#d0e6ff,stroke:#339,stroke-width:1.5px;
   class out1 blueBox;</code></pre>
 <h2 id="usability">Usability</h2>
-<p>The <strong>Apps</strong> built with <strong>NUREMICS</strong> come with a lean and pragmatic user interface by design. No flashy GUI, but instead, the focus is on simplicity and efficiency:</p>
+<p>The <strong>Apps</strong> built with <strong>nuRemics</strong> come with a lean and pragmatic user interface by design. No flashy GUI, but instead, the focus is on simplicity and efficiency:</p>
 <ul>
 <li>
 <p>An input database that the operator completes by editing configuration files and uploading the required input files and folders.</p>
@@ -1707,7 +1707,7 @@
     DEMO_APP-&gt;&gt;OUTPUTS: Write database
     DEMO_APP-&gt;&gt;Operator: Terminal feedback
     Operator-&gt;&gt;OUTPUTS: Access results</code></pre>
-<p>This streamlined approach prioritizes clarity, control, and reproducibility, making each <strong>App</strong> built with <strong>NUREMICS</strong> well-suited for both direct interaction by end-users and seamless integration into larger software ecosystems. In such environments, <strong>NUREMICS</strong> can operate as a backend computational engine, interacting programmatically with other tools (such as web applications) that provide their own user interfaces.</p>
+<p>This streamlined approach prioritizes clarity, control, and reproducibility, making each <strong>App</strong> built with <strong>nuRemics</strong> well-suited for both direct interaction by end-users and seamless integration into larger software ecosystems. In such environments, <strong>nuRemics</strong> can operate as a backend computational engine, interacting programmatically with other tools (such as web applications) that provide their own user interfaces.</p>
 <h3 id="configuration">Configuration</h3>
 <p>When running an <strong>App</strong>, the operator first defines a set of studies aimed at exploring the <strong>INPUTS</strong> space and analyzing the outcomes in the <strong>OUTPUTS</strong> space.</p>
 <pre class="mermaid"><code>flowchart LR
@@ -1817,7 +1817,7 @@
     Study2_Test3 --&gt; test3_path2["velocity.json _(uploaded)_"]</code></pre>
 <h3 id="results">Results</h3>
 <p>At the end of the execution, results are stored in a structured output tree, ready for review or further processing. The outputs are first organized by <strong>Proc</strong>, each of them writing its own result data. Within each <strong>Proc</strong>, the results are further subdivided by experiment <em>(Test1, Test2, ...)</em>, ensuring a clear separation and traceability of outcomes across the entire study.</p>
-<p>This organization is automatically determined based on how the study is configured by the operator. <strong>NUREMICS</strong> analyzes which input data are marked as <em>fixed</em> or <em>variable</em>, and how they connect to the internal workflow of the <strong>App</strong>. If a <strong>Proc</strong> directly depends on <em>variable</em> inputs, or indirectly through upstream dependencies, it will generate distinct outputs for each experiment. Otherwise, it will produce shared outputs only once.</p>
+<p>This organization is automatically determined based on how the study is configured by the operator. <strong>nuRemics</strong> analyzes which input data are marked as <em>fixed</em> or <em>variable</em>, and how they connect to the internal workflow of the <strong>App</strong>. If a <strong>Proc</strong> directly depends on <em>variable</em> inputs, or indirectly through upstream dependencies, it will generate distinct outputs for each experiment. Otherwise, it will produce shared outputs only once.</p>
 <p>This logic ensures that only the necessary parts of the workflow are repeated through experimentations, and that the output structure faithfully reflects the configuration of the study along with the internal dependencies within the workflow.</p>
 <pre class="mermaid"><code>flowchart LR
     Study_Shape --&gt; Study1_PolygonGeometryProc["PolygonGeometryProc"]
@@ -1857,7 +1857,7 @@
     Study2_ProjectileModelProc_Test3 --&gt; Study2_ProjectileModelProc_Test3_output3["comparison"]</code></pre>
 <hr />
 <div align="center" style="font-weight: bold; font-size: 1.0rem;">
-Explore NUREMICS in:
+Explore nuRemics in:
 </div>
 
 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">

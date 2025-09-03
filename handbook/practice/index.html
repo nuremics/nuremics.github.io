@@ -20,7 +20,7 @@
     
     
       
-        <title>Practice - NUREMICS®</title>
+        <title>Practice - nuRemics</title>
       
     
     
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="NUREMICS®" class="md-header__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+    <a href="../.." title="nuRemics" class="md-header__button md-logo" aria-label="nuRemics" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
@@ -101,7 +101,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            NUREMICS®
+            nuRemics
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -185,12 +185,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="NUREMICS®" class="md-nav__button md-logo" aria-label="NUREMICS®" data-md-component="logo">
+    <a href="../.." title="nuRemics" class="md-nav__button md-logo" aria-label="nuRemics" data-md-component="logo">
       
   <img src="../../images/logo.png" alt="logo">
 
     </a>
-    NUREMICS®
+    nuRemics
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1383,11 +1383,11 @@
 
 <h1 id="practice">Practice</h1>
 <h2 id="use-app">Use App</h2>
-<p>This section walks you through the usage of a <strong>NUREMICS App</strong> from the end-user's perspective. We will demonstrate how to interact with a ready-to-use <strong>App</strong>, including how to design studies, define experiments, provide inputs, run the <strong>App</strong>, and retrieve the expected outputs.</p>
+<p>This section walks you through the usage of a <strong>nuRemics App</strong> from the end-user's perspective. We will demonstrate how to interact with a ready-to-use <strong>App</strong>, including how to design studies, define experiments, provide inputs, run the <strong>App</strong>, and retrieve the expected outputs.</p>
 <hr />
-<p>When launching the <strong>App</strong>, <strong>NUREMICS</strong> first provides the following terminal feedback:</p>
+<p>When launching the <strong>App</strong>, <strong>nuRemics</strong> first provides the following terminal feedback:</p>
 <ul>
-<li>A visual banner indicating the launch of a <strong>NUREMICS App</strong>.</li>
+<li>A visual banner indicating the launch of a <strong>nuRemics App</strong>.</li>
 <li>A structured overview of the assembled workflow, with its constitutive <strong>Procs</strong> and <strong>Ops</strong>, and their order of execution within the <strong>App</strong> workflow.</li>
 <li>A summary of the <strong>App</strong>'s I/O interface. This summary includes all declared user parameters (<code>"user_params"</code>) and user paths (<code>"user_paths"</code>) required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing you to understand what data you need to provide and what results to expect.</li>
 </ul>
@@ -1449,7 +1449,7 @@ DEMO_APP_____
 &gt;<span class="w"> </span>overall_comparisons.png
 </code></pre></div></p>
 <h3 id="specify-working-directory">Specify Working Directory</h3>
-<p>If this is your first time launching a <strong>NUREMICS App</strong>, <strong>NUREMICS</strong> will prompt you to specify the working directory (<code>"working_dir"</code>) for the <strong>App</strong>. This directory serves as the root location where all input/output data, logs, and results will be stored.</p>
+<p>If this is your first time launching a <strong>nuRemics App</strong>, <strong>nuRemics</strong> will prompt you to specify the working directory (<code>"working_dir"</code>) for the <strong>App</strong>. This directory serves as the root location where all input/output data, logs, and results will be stored.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="o">(</span>X<span class="o">)</span><span class="w"> </span>Please<span class="w"> </span>define<span class="w"> </span>DEMO_APP<span class="w"> </span><span class="s2">&quot;working_dir&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>file<span class="w"> </span>:
 &gt;<span class="w"> </span>.../nuremics-labs/.nuremics/settings.json
@@ -1472,7 +1472,7 @@ DEMO_APP_____
 </div>
 </div>
 <hr />
-<p>If you've already launched a <strong>NUREMICS App</strong> before, but this is your first time launching this specific <strong>App</strong>, <strong>NUREMICS</strong> may have already registered a <code>default_working_dir</code> in the <code>settings.json</code> file based on a previous <strong>App</strong>. In that case, it will suggest using this same directory as the <code>"working_dir"</code> for the current <strong>App</strong>.</p>
+<p>If you've already launched a <strong>nuRemics App</strong> before, but this is your first time launching this specific <strong>App</strong>, <strong>nuRemics</strong> may have already registered a <code>default_working_dir</code> in the <code>settings.json</code> file based on a previous <strong>App</strong>. In that case, it will suggest using this same directory as the <code>"working_dir"</code> for the current <strong>App</strong>.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="o">(</span>!<span class="o">)</span><span class="w"> </span>Found<span class="w"> </span><span class="s2">&quot;default_working_dir&quot;</span>:<span class="w"> </span>path/to/your/previous/app/working_dir
 Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </span><span class="s2">&quot;working_dir&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>DEMO_APP:<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span>
@@ -1485,7 +1485,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 └──<span class="w"> </span>DEMO_APP/<span class="w"> </span>➕<span class="w"> </span><span class="c1">#generated</span>
 </code></pre></div></p>
 <h3 id="declare-studies">Declare Studies</h3>
-<p><strong>NUREMICS</strong> then prompts you to declare the different studies you want to carry out with the <strong>App</strong>.</p>
+<p><strong>nuRemics</strong> then prompts you to declare the different studies you want to carry out with the <strong>App</strong>.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
 
@@ -1520,7 +1520,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <span class="w">    </span>└──<span class="w"> </span>studies.json<span class="w"> </span>➕<span class="w"> </span><span class="c1">#generated</span>
 </code></pre></div></p>
 <h3 id="configure-studies">Configure Studies</h3>
-<p><strong>NUREMICS</strong> then prompts you to configure the first study that you previously declared.</p>
+<p><strong>nuRemics</strong> then prompts you to configure the first study that you previously declared.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
 
@@ -1572,7 +1572,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 </div>
 </div>
 <hr />
-<p><strong>NUREMICS</strong> then prompts that the first study is properly configured, but indicates that the second declared study still requires configuration.</p>
+<p><strong>nuRemics</strong> then prompts that the first study is properly configured, but indicates that the second declared study still requires configuration.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
 
@@ -1632,7 +1632,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 </div>
 </div>
 <hr />
-<p><strong>NUREMICS</strong> finally prompts that all declared studies are properly configured.</p>
+<p><strong>nuRemics</strong> finally prompts that all declared studies are properly configured.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>STUDIES<span class="w"> </span>&lt;
 
@@ -1683,7 +1683,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <li><strong><code>0_inputs/</code>:</strong> This folder must contain the input files and/or folders defined as <code>"user_paths"</code> (either <em>fixed</em> or <em>variable</em>).</li>
 </ul>
 <hr />
-<p><strong>NUREMICS</strong> first prompts you to set the <em>fixed</em> input data for the first declared study.</p>
+<p><strong>nuRemics</strong> first prompts you to set the <em>fixed</em> input data for the first declared study.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
 
@@ -1769,7 +1769,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <span class="w">        </span>└──<span class="w"> </span>0_inputs/
 </code></pre></div></p>
 <hr />
-<p><strong>NUREMICS</strong> then prompts that all <em>fixed</em> input data have been properly set, but indicates that datasets of <em>variable</em> input data still need to be declared in order to define the experiments to run.</p>
+<p><strong>nuRemics</strong> then prompts that all <em>fixed</em> input data have been properly set, but indicates that datasets of <em>variable</em> input data still need to be declared in order to define the experiments to run.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
 
@@ -1791,7 +1791,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 </div>
 </div>
 </div>
-<p><strong>NUREMICS</strong> now prompts that the three experiments have been declared, but is waiting for the <em>variable</em> input data to be set for each of them.</p>
+<p><strong>nuRemics</strong> now prompts that the three experiments have been declared, but is waiting for the <em>variable</em> input data to be set for each of them.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="w"> </span>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
 
@@ -1816,7 +1816,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 </div>
 </div>
 </div>
-<p><strong>NUREMICS</strong> finally prompts that all input data are properly set for the study.</p>
+<p><strong>nuRemics</strong> finally prompts that all input data are properly set for the study.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
 
@@ -1985,7 +1985,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 <span class="w">                    </span>└──<span class="w"> </span>velocity.json<span class="w"> </span>⬇️<span class="w"> </span><span class="c1">#uploaded</span>
 </code></pre></div></p>
 <hr />
-<p><strong>NUREMICS</strong> finally prompts that all input data are properly set for all declared studies.</p>
+<p><strong>nuRemics</strong> finally prompts that all input data are properly set for all declared studies.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>SETTINGS<span class="w"> </span>&lt;
 
@@ -2002,7 +2002,7 @@ Accept<span class="w"> </span>it<span class="w"> </span>as<span class="w"> </spa
 &gt;<span class="w"> </span>Test3<span class="w"> </span>:<span class="w"> </span><span class="o">(</span>V<span class="o">)</span><span class="w"> </span>velocity.json
 </code></pre></div></p>
 <h3 id="get-results">Get Results</h3>
-<p>At this stage, <strong>NUREMICS</strong> is ready to run all the defined studies and generate the corresponding results.</p>
+<p>At this stage, <strong>nuRemics</strong> is ready to run all the defined studies and generate the corresponding results.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>RUNNING<span class="w"> </span>&lt;
 
@@ -2098,7 +2098,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 &gt;&gt;&gt;<span class="w"> </span>START
 COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 </code></pre></div></p>
-<p>You can then access the results in the output database generated by <strong>NUREMICS</strong> within the <strong>App</strong>'s <code>"working_dir"</code>. </p>
+<p>You can then access the results in the output database generated by <strong>nuRemics</strong> within the <strong>App</strong>'s <code>"working_dir"</code>. </p>
 <p>👤👁️💾
 <div class="highlight"><pre><span></span><code>&lt;working_dir&gt;/
 └──<span class="w"> </span>DEMO_APP/
@@ -2172,7 +2172,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 <span class="w">            </span>└──<span class="w"> </span>overall_comparisons.png<span class="w">     </span>➕<span class="w"> </span><span class="c1">#generated</span>
 </code></pre></div></p>
 <h2 id="create-app">Create App</h2>
-<p>Now that we've saw how to use a <strong>NUREMICS App</strong> as an end-user, it's now time to look under the hood and explore how the <strong>App</strong> is actually built. This section dives into the developer's side of <strong>NUREMICS</strong>, exposing how to define, organize, and structure a fully functional <strong>App</strong>.</p>
+<p>Now that we've saw how to use a <strong>nuRemics App</strong> as an end-user, it's now time to look under the hood and explore how the <strong>App</strong> is actually built. This section dives into the developer's side of <strong>nuRemics</strong>, exposing how to define, organize, and structure a fully functional <strong>App</strong>.</p>
 <p>You'll start by implementing your own <a href="../theory/#proc" target="_blank"><strong>Procs</strong></a>, which encapsulate domain-specific logic and computational tasks. Then, you’ll learn how to assemble these building blocks into a fully operational <a href="../theory/#app" target="_blank"><strong>App</strong></a>.</p>
 <h3 id="implement-procs">Implement Procs</h3>
 <p>We start by defining the core building blocks of the <strong>App</strong> to be created: the <strong>Procs</strong>. Each <strong>Proc</strong> is a reusable item that encapsulates a specific piece of logic executed within the overall workflow. Internally, this logic can be further decomposed into elementary operations (<strong>Ops</strong>), implemented as individual functions (units) within the <strong>Proc</strong> itself.</p>
@@ -2182,7 +2182,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
 </code></pre></div>
 <hr />
-<p>We then declare our first <strong>Proc</strong> as a Python class named <code>PolygonGeometryProc</code>, inheriting from the <code>Process</code> base class. This marks it as a modular item of computation which can be executed within a <strong>NUREMICS</strong> workflow.</p>
+<p>We then declare our first <strong>Proc</strong> as a Python class named <code>PolygonGeometryProc</code>, inheriting from the <code>Process</code> base class. This marks it as a modular item of computation which can be executed within a <strong>nuRemics</strong> workflow.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
 
@@ -2191,7 +2191,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 </code></pre></div>
 <hr />
 <p>We now declare the input data required by our <code>PolygonGeometryProc</code>, grouped into two categories: <strong>Parameters</strong> and <strong>Paths</strong>. Each input is defined using <code>attrs.field()</code> and marked with <code>metadata={"input": True}</code>.</p>
-<p>This metadata is essential: it tells the <strong>NUREMICS</strong> framework that these attributes are expected as input data, ensuring they are properly tracked and managed throughout the workflow.</p>
+<p>This metadata is essential: it tells the <strong>nuRemics</strong> framework that these attributes are expected as input data, ensuring they are properly tracked and managed throughout the workflow.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">nuremics</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
@@ -2208,7 +2208,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 </code></pre></div>
 <hr />
 <p>In addition to the previously declared input data, a <strong>Proc</strong> can also define internal variables: attributes used during the execution of its internal logic but not provided as input data.</p>
-<p>These internal variables, like <code>df_points</code> in our example below, are declared without the <code>metadata={"input": True}</code> tag, signaling to the <strong>NUREMICS</strong> framework that they are not exposed to the workflow and will be set or computed within the <strong>Proc</strong> itself.</p>
+<p>These internal variables, like <code>df_points</code> in our example below, are declared without the <code>metadata={"input": True}</code> tag, signaling to the <strong>nuRemics</strong> framework that they are not exposed to the workflow and will be set or computed within the <strong>Proc</strong> itself.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
@@ -2260,7 +2260,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
         <span class="c1"># &lt;/&gt; your code &lt;/&gt;</span>
 </code></pre></div>
 <hr />
-<p>Note that the <strong>Proc</strong> should at some point produce output data, typically in the form of files or folders generated during the execution of its <strong>Ops</strong>. To make these output data trackable by the <strong>NUREMICS</strong> framework, each must be registered in the <code>self.output_paths</code> dictionary using a label that is unique to the <strong>Proc</strong> (e.g., <code>"coords_file"</code>, <code>"fig_file"</code>).</p>
+<p>Note that the <strong>Proc</strong> should at some point produce output data, typically in the form of files or folders generated during the execution of its <strong>Ops</strong>. To make these output data trackable by the <strong>nuRemics</strong> framework, each must be registered in the <code>self.output_paths</code> dictionary using a label that is unique to the <strong>Proc</strong> (e.g., <code>"coords_file"</code>, <code>"fig_file"</code>).</p>
 <p>Using the dictionary syntax <code>self.output_paths["coords_file"]</code> effectively declares an output variable named <code>coords_file</code>, which will later be instantiated by assigning it a specific file or folder name when integrating the <strong>Proc</strong> into a broader application workflow.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -2298,7 +2298,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 </code></pre></div>
 <hr />
 <p>Even though <strong>Procs</strong> are not intended to be executed independently by end-users, they are still designed with the possibility to run <em>out of the box</em>. This allows developers to easily execute them during the development phase or when implementing dedicated unit tests for a specific <strong>Proc</strong>.</p>
-<p>In such cases, it is important to set <code>set_inputs=True</code> when instantiating the <strong>Proc</strong>, to explicitly inform the <strong>NUREMICS</strong> framework that the input data are being provided manually, outside of any workflow context.</p>
+<p>In such cases, it is important to set <code>set_inputs=True</code> when instantiating the <strong>Proc</strong>, to explicitly inform the <strong>nuRemics</strong> framework that the input data are being provided manually, outside of any workflow context.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">attrs</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
@@ -2493,7 +2493,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
 </code></pre></div>
 <hr />
 <p>At this stage, we can start executing the <strong>App</strong> and see what's happen.</p>
-<p>Note that <strong>NUREMICS</strong> performs a structural check of each <strong>Proc</strong> by inspecting its <code>__call__</code> method. Specifically, it ensures that only functions (<strong>Ops</strong>) defined within the <strong>Proc</strong> class itself are called during execution. This design choice enforces a clean and self-contained structure for each <strong>Proc</strong>, where all internal logic remains encapsulated.</p>
+<p>Note that <strong>nuRemics</strong> performs a structural check of each <strong>Proc</strong> by inspecting its <code>__call__</code> method. Specifically, it ensures that only functions (<strong>Ops</strong>) defined within the <strong>Proc</strong> class itself are called during execution. This design choice enforces a clean and self-contained structure for each <strong>Proc</strong>, where all internal logic remains encapsulated.</p>
 <p>Let's consider a case where the developer does not adhere to this enforced structural rule, for instance, by injecting additional logic directly into the <code>__call__</code> method of a <strong>Proc</strong> (in this example, in the <code>ProjectileModelProc</code> class).</p>
 <div class="highlight"><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">()</span>
@@ -2504,7 +2504,7 @@ COMPLETED<span class="w"> </span><span class="o">&lt;&lt;&lt;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">calculate_analytical_trajectory</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compare_model_vs_analytical_trajectories</span><span class="p">()</span>
 </code></pre></div>
-<p>In this situation, <strong>NUREMICS</strong> will immediately raise a structural validation error and halt execution.</p>
+<p>In this situation, <strong>nuRemics</strong> will immediately raise a structural validation error and halt execution.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>Workflow<span class="w"> </span><span class="p">|</span>
 DEMO_APP_____
@@ -2525,7 +2525,7 @@ DEMO_APP_____
 <span class="w">        </span>...
 </code></pre></div></p>
 <hr />
-<p><strong>NUREMICS</strong> is then expected to display a summary of all required input/output data for each <strong>Proc</strong>, along with their current mapping status within the <strong>App</strong>.</p>
+<p><strong>nuRemics</strong> is then expected to display a summary of all required input/output data for each <strong>Proc</strong>, along with their current mapping status within the <strong>App</strong>.</p>
 <p>At this stage, the system automatically verifies whether every required input/output data has been properly mapped within the <strong>App</strong> configuration.</p>
 <p>If any <strong>input parameters</strong> are missing, they are explicitly listed, and the developer is prompted to define them using either the <code>"user_params"</code> or <code>"hard_params"</code> key.</p>
 <p>👤🔄🖥️
@@ -2581,7 +2581,7 @@ DEMO_APP_____
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<p>When running the <strong>App</strong> again, <strong>NUREMICS</strong> detects that all required <strong>input parameters</strong> for <code>PolygonGeometryProc</code> have been successfully mapped. However, it now reports that one or more <strong>input paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using either the <code>"user_paths"</code> or <code>"required_paths"</code> key.</p>
+<p>When running the <strong>App</strong> again, <strong>nuRemics</strong> detects that all required <strong>input parameters</strong> for <code>PolygonGeometryProc</code> have been successfully mapped. However, it now reports that one or more <strong>input paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using either the <code>"user_paths"</code> or <code>"required_paths"</code> key.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
 &gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
@@ -2640,7 +2640,7 @@ title_file<span class="w"> </span>-----<span class="o">||</span>-----<span class
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<p>When running the <strong>App</strong> again, <strong>NUREMICS</strong> detects that all required <strong>input paths</strong> for <code>PolygonGeometryProc</code> have been successfully mapped. However, it now reports that one or more <strong>output paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using the <code>"output_paths"</code> key.</p>
+<p>When running the <strong>App</strong> again, <strong>nuRemics</strong> detects that all required <strong>input paths</strong> for <code>PolygonGeometryProc</code> have been successfully mapped. However, it now reports that one or more <strong>output paths</strong> are missing. These are explicitly listed, and the developer is prompted to define them using the <code>"output_paths"</code> key.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
 &gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
@@ -2723,7 +2723,7 @@ fig_file<span class="w">    </span>-----<span class="o">||</span>-----<span clas
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<p>With all required mappings now properly defined for each <strong>Proc</strong>, the <strong>App</strong> can be executed without raising any errors. <strong>NUREMICS</strong> confirms that the full mapping is complete by prompting a summary for each <strong>Proc</strong>, indicating that all <strong>input parameters</strong>, <strong>input paths</strong>, and <strong>output paths</strong> have been successfully resolved.</p>
+<p>With all required mappings now properly defined for each <strong>Proc</strong>, the <strong>App</strong> can be executed without raising any errors. <strong>nuRemics</strong> confirms that the full mapping is complete by prompting a summary for each <strong>Proc</strong>, indicating that all <strong>input parameters</strong>, <strong>input paths</strong>, and <strong>output paths</strong> have been successfully resolved.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>PolygonGeometryProc<span class="w"> </span><span class="p">|</span>
 &gt;<span class="w"> </span>Input<span class="w"> </span>Parameter<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>:
@@ -2751,7 +2751,7 @@ None.
 comp_folder<span class="w"> </span>-----<span class="o">||</span>-----<span class="w"> </span>comparison<span class="w"> </span><span class="o">(</span>output_paths<span class="o">)</span>
 </code></pre></div></p>
 <hr />
-<p>As the <strong>App</strong> has now been fully assembled, <strong>NUREMICS</strong> displays a clean summary of its I/O interface, as it will appear to the end-user. This summary includes all declared user parameters (<code>"user_params"</code>) and user paths (<code>"user_paths"</code>) required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing end-users to clearly understand what data they need to provide and what results to expect.</p>
+<p>As the <strong>App</strong> has now been fully assembled, <strong>nuRemics</strong> displays a clean summary of its I/O interface, as it will appear to the end-user. This summary includes all declared user parameters (<code>"user_params"</code>) and user paths (<code>"user_paths"</code>) required as inputs, along with the corresponding output files and folders that the <strong>App</strong> will generate. It serves as an explicit interface contract, allowing end-users to clearly understand what data they need to provide and what results to expect.</p>
 <p>👤🔄🖥️
 <div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>INPUTS<span class="w"> </span>&lt;
 
@@ -2776,7 +2776,7 @@ comp_folder<span class="w"> </span>-----<span class="o">||</span>-----<span clas
 <p>The <strong>App</strong> is now fully functional and ready to be operated by end-users. From this point, users can interact with the <strong>App</strong> through its declared I/O interface, without needing to modify or understand the underlying code structure.</p>
 <hr />
 <div align="center" style="font-weight: bold; font-size: 1.0rem;">
-Explore NUREMICS in:
+Explore nuRemics in:
 </div>
 
 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
