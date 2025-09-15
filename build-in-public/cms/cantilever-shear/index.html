@@ -1049,6 +1049,63 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials &amp; Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials &amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-geometryproc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. GeometryProc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. GeometryProc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outputs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1196,6 +1253,63 @@
       Introduction
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials &amp; Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials &amp; Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-geometryproc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. GeometryProc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. GeometryProc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outputs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1476,6 +1590,108 @@ Take part of the discussions on the Discord channel <code>#cantilever-shear</cod
 <p>It is nonetheless important to note that this methodology could be broadened to contexts beyond <strong>MD</strong>, making the <strong>V&amp;V40</strong> framework relevant for a wide range of industrial applications where the <strong>V&amp;V</strong> of computational models is critical for design, safety, and performance assessment.</p>
 <p>In the present use case, the benchmark problem is employed to establish the credibility factor associated with <strong>Numerical Code Verification (NCV)</strong>. The objective of <strong>NCV</strong> is to demonstrate the correct implementation and functioning of the numerical algorithms within the <strong>CM&amp;S</strong> framework. This involves a careful investigation of key numerical aspects, including spatial and temporal convergence rates, independence from coordinate transformations, and symmetry tests under various system conditions.</p>
 <p><strong>NCV</strong> is typically conducted by comparing numerical solutions to exact benchmark solutions, which may be analytical or semi-analytical, or generated using techniques such as the methods of manufactured solutions. In this use case, the cantilever beam benchmark provides such a reference solution, enabling a rigorous assessment of the numerical fidelity of the <strong>nuRemics CM&amp;S software system</strong> across multiple modeling strategies (3D solids, 2D shells, and 1D beams).</p>
+<h2 id="materials-methods">Materials &amp; Methods</h2>
+<p>This use case is organized into a sequential scientific workflow, implemented through a <strong>nuRemics App</strong> called <strong><a href="../../../labs/apps/cms/CANTILEVER_SHEAR_APP/app/" target="_blank"><code>CANTILEVER_SHEAR_APP</code></a></strong>, composed of the following software processes:</p>
+<ol>
+<li><strong><a href="../../../labs/apps/cms/CANTILEVER_SHEAR_APP/procs/GeometryProc/" target="_blank"><code>GeometryProc</code></a>:</strong> Create a geometric representation of a physical system.<br>
+  A/ <strong><code>create_geometry</code>:</strong> Create and export a simple geometric entity (beam, plate, or block) in STEP or BREP format.</li>
+</ol>
+<pre class="mermaid"><code>flowchart RL
+  **GeometryProc** e1@--1--o **CANTILEVER_SHEAR_APP**
+  **create_geometry** e2@--A--o **GeometryProc**
+  e1@{ animate: true }
+  e2@{ animate: true }</code></pre>
+<p>The workflow, and associated I/O Interface, is finally assembled as follows:</p>
+<pre class="mermaid"><code>flowchart LR
+  subgraph **INPUTS**
+    direction TB
+
+    subgraph **Parameters**
+      direction LR
+      param1["dimension _(int)_"]
+    end
+  end
+
+  subgraph **CANTILEVER_SHEAR_APP**
+    direction RL
+    proc1["GeometryProc"]
+  end
+
+  subgraph **OUTPUTS**
+    direction RL
+    out1["geometry.(step/brep) _(file)_"]
+  end
+
+  **INPUTS** --&gt; **CANTILEVER_SHEAR_APP**
+  **CANTILEVER_SHEAR_APP** --&gt; **OUTPUTS**</code></pre>
+<pre class="mermaid"><code>flowchart LR
+  subgraph **INPUTS**
+    direction TB
+
+    subgraph **Parameters**
+      direction LR
+      param1["dimension _(int)_"]
+    end
+  end
+
+  subgraph **CANTILEVER_SHEAR_APP**
+    direction RL
+    proc1["GeometryProc"]
+  end
+
+  subgraph **OUTPUTS**
+    direction RL
+    out1["geometry.(step/brep) _(file)_"]
+  end
+
+  **INPUTS** --&gt; proc1
+  proc1 --&gt; **OUTPUTS**</code></pre>
+<h3 id="1-geometryproc">1. GeometryProc</h3>
+<h4 id="inputs">Inputs</h4>
+<p>This process takes the following input parameter(s):</p>
+<ul>
+<li><strong><code>dimension</code>:</strong> Dimension of the geometry: 1 for a line (beam), 2 for a rectangle (plate), 3 for a box (block).</li>
+</ul>
+<h4 id="process">Process</h4>
+<p>This process uses <a href="https://cadquery.readthedocs.io/en/latest/">CadQuery</a> to create the geometry of the physical system in the desired <code>dimension</code> (see Fig. 3).</p>
+<figure style="text-align:center;">
+
+  <!-- Ligne avec 3 sous-figures -->
+  <div style="display:inline-block; width:30%; margin:0 10px; text-align:center;">
+    <img src="../../../images/cantilever_shear_geometry_3D.png" style="width:100%;"/>
+    <figcaption>(a) <code>dimension</code> = 3 (3D block). </figcaption>
+  </div>
+  <div style="display:inline-block; width:30%; margin:0 10px; text-align:center;">
+    <img src="../../../images/cantilever_shear_geometry_2D.png" style="width:100%;"/>
+    <figcaption>(b) <code>dimension</code> = 2 (2D plate). </figcaption>
+  </div>
+  <div style="display:inline-block; width:30%; margin:0 10px; text-align:center;">
+    <img src="../../../images/cantilever_shear_geometry_1D.png" style="width:100%;"/>
+    <figcaption>(c) <code>dimension</code> = 1 (1D beam). </figcaption>
+  </div>
+
+  <!-- Légende globale -->
+  <figcaption style="margin-top:10px; font-style:italic;">
+    Figure 3: Created geometry of the physical system.
+  </figcaption>
+</figure>
+
+<h4 id="outputs">Outputs</h4>
+<p>This process generates the following output file(s)/folder(s):</p>
+<ul>
+<li><strong><code>geometry.(step/brep)</code>:</strong> File containing the created geometry (in .step if <code>dimension</code> = 3|2 or .brep if <code>dimension</code> = 1).</li>
+</ul>
+<hr />
+<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+  <a href="../../../labs/apps/cms/CANTILEVER_SHEAR_APP/app/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="md-button md-button--primary">
+    View App
+  </a>
+</div>
+
+<hr />
 
 
 
