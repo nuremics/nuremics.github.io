@@ -1463,7 +1463,7 @@
 
 <h2 id="process">Process</h2>
 <p>Define and label the entities of a physical system from its geometric representation.<br>
-A/ <strong><code>label_boundaries</code>:</strong> Assign labels to the boundaries of a geometric model.</p>
+A/ <strong><code>label_entities</code>:</strong> Assign labels to the entities of a geometric model.</p>
 <pre class="mermaid"><code>erDiagram
   **Parameters** ||--|| **Inputs** : provides
   **Paths** ||--|| **Inputs** : provides
@@ -1477,7 +1477,7 @@ A/ <strong><code>label_boundaries</code>:</strong> Assign labels to the boundari
     file infile "step/brep"
   }
   **LabelingProc** {
-    op label_boundaries
+    op label_entities
   }
   **Outputs** {
     file outfile "json"
