@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../launch/">
+      
+      
+        <link rel="next" href="../../handbook/">
       
       
       <link rel="icon" href="../../images/logo.png">
@@ -217,18 +221,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -244,7 +250,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -315,6 +321,39 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Explore
+    
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -847,167 +886,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Procs
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Procs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    General
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            General
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/procs/general/PolygonGeometryProc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    PolygonGeometryProc
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/procs/general/ProjectileModelProc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ProjectileModelProc
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../labs/procs/general/TrajectoryAnalysisProc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    TrajectoryAnalysisProc
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1050,6 +928,74 @@
 
 
 <h1 id="explore">Explore</h1>
+<p>Let's dive deeper by conducting our own scientific exploration. We now analyze how gravity affects the trajectory of the projectile by configuring a custom study that simulates the same projectile on different planets (the Earth, the Moon and Mars):</p>
+<ol>
+<li>
+<p><strong>Declare a new study</strong> <br>
+Create a new study named <code>Study_Gravity</code>.</p>
+</li>
+<li>
+<p><strong>Configure the variable and fixed inputs</strong> <br>
+Set the <code>gravity</code> input parameter as variable and keep all other inputs fixed.</p>
+</li>
+<li>
+<p><strong>Define the input datasets</strong> <br>
+Create three distinct input datasets to test different gravity values:</p>
+<ul>
+<li><code>Earth</code>: Set the parameter to the gravity of the Earth (<code>-9.81</code> m/s², which is already the default value).</li>
+<li><code>Moon</code>: Set the parameter to the gravity of the Moon (<code>-1.62</code> m/s²).</li>
+<li><code>Mars</code>: Set the parameter to the gravity of Mars (<code>-3.72</code> m/s²).</li>
+</ul>
+</li>
+<li>
+<p><strong>Manage the execution flow</strong> <br>
+To focus strictly on our new exploration, we can deactivate the execution of <code>Study_Shape</code> and <code>Study_Velocity</code>.</p>
+</li>
+<li>
+<p><strong>Enable silent mode</strong> <br>
+Configure the software processes (<code>PolygonGeometryProc</code>, <code>ProjectileModelProc</code>, and <code>TrajectoryAnalysisProc</code>) to run in <em>silent mode</em>. This prevents interactive windows from popping up, allowing the application to execute all computations quietly in the background.</p>
+</li>
+<li>
+<p><strong>Run and review</strong> <br>
+Run the application. Once the computations are complete, access the results for <code>Study_Gravity</code> to compare the various trajectories of the projectile across the three different environments.</p>
+</li>
+<li>
+<p><strong>Refine the analysis</strong> <br>
+By default, all curves in the <code>overall_comparisons.png</code> output are plotted using the same style (red circular markers). To better distinguish them, we can customize the style of each curve in the results settings of the <code>TrajectoryAnalysisProc</code> (the software process that generates this specific output). Let's then adjust the settings as follows:</p>
+<ul>
+<li>For the <code>Earth</code>:<ul>
+<li><code>marker</code>: <code>D</code></li>
+<li><code>markersize</code>: <code>6</code></li>
+<li><code>markevery</code>: <code>40</code></li>
+</ul>
+</li>
+<li>For the <code>Moon</code>:<ul>
+<li><code>color</code>: <code>limegreen</code></li>
+<li><code>marker</code>: <code>v</code></li>
+<li><code>markevery</code>: <code>50</code></li>
+</ul>
+</li>
+<li>For <code>Mars</code>:<ul>
+<li><code>color</code>: <code>dodgerblue</code></li>
+<li><code>marker</code>: <code>X</code></li>
+<li><code>markevery</code>: <code>50</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Restart the analysis</strong> <br>
+To update the <code>overall_comparisons.png</code> plot without re-running the entire study, we can deactivate the execution of <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code> and relaunch the application to execute only the <code>TrajectoryAnalysisProc</code>. The results section will instantly refresh with our new visual styles.</p>
+</li>
+<li>
+<p><strong>Run your own experiment</strong> <br>
+It is now your turn to expand this exploration. Add a fourth input dataset to the <code>Study_Gravity</code> by choosing a planet of your choice (e.g., Jupiter, Venus, or even the Sun) and look up its gravity value:</p>
+<ul>
+<li>To optimize the execution, deactivate the previous datasets (<code>Earth</code>, <code>Moon</code>, <code>Mars</code>) within the study. This ensures the application will only process your new dataset.</li>
+<li>Customize the appearance of your new curve in the <code>TrajectoryAnalysisProc</code> results settings. You can refer to the <a href="https://matplotlib.org/stable/" target="_blank">Matplotlib</a> conventions for the <a href="https://matplotlib.org/stable/gallery/color/named_colors.html" target="_blank">colors</a>, <a href="https://matplotlib.org/stable/api/markers_api.html" target="_blank">markers</a> and <a href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">linestyles</a>.</li>
+</ul>
+</li>
+</ol>
 <hr />
 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
   <a href="https://www.suffisciens.com/labsvision"
