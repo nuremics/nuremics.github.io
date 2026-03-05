@@ -20,7 +20,7 @@
     
     
       
-        <title>Explore - nuRemics</title>
+        <title>Exploration - nuRemics</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#explore" class="md-skip">
+        <a href="#exploration" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Explore
+              Exploration
             
           </span>
         </div>
@@ -347,7 +347,7 @@
   
   
   <span class="md-ellipsis">
-    Explore
+    Exploration
     
   </span>
   
@@ -927,7 +927,16 @@
 
 
 
-<h1 id="explore">Explore</h1>
+<h1 id="exploration">Exploration</h1>
+<div style="text-align: center; margin-top: 2em;">
+  <iframe width="640" height="360"
+          src="https://www.youtube.com/embed/7BXMfTy62DQ?autoplay=1&loop=1&playlist=7BXMfTy62DQ&mute=1"
+          frameborder="0"
+          allow="autoplay"
+          allowfullscreen>
+  </iframe>
+</div>
+
 <p>Let's dive deeper by conducting our own scientific exploration. We now analyze how gravity affects the trajectory of the projectile by configuring a custom study that simulates the same projectile on different planets (the Earth, the Moon and Mars):</p>
 <ol>
 <li>
@@ -949,7 +958,7 @@ Create three distinct input datasets to test different gravity values:</p>
 </li>
 <li>
 <p><strong>Manage the execution flow</strong> <br>
-To focus strictly on our new exploration, we can deactivate the execution of <code>Study_Shape</code> and <code>Study_Velocity</code>.</p>
+To focus strictly on our new exploration, we can disable the execution of <code>Study_Shape</code> and <code>Study_Velocity</code>.</p>
 </li>
 <li>
 <p><strong>Enable silent mode</strong> <br>
@@ -985,13 +994,14 @@ By default, all curves in the <code>overall_comparisons.png</code> output are pl
 </li>
 <li>
 <p><strong>Restart the analysis</strong> <br>
-To update the <code>overall_comparisons.png</code> plot without re-running the entire study, we can deactivate the execution of <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code> and relaunch the application to execute only the <code>TrajectoryAnalysisProc</code>. The results section will instantly refresh with our new visual styles.</p>
+To update the <code>overall_comparisons.png</code> plot without re-running the entire study, we can disable the execution of <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code> and relaunch the application to execute only the <code>TrajectoryAnalysisProc</code>. The results section will instantly refresh with our new visual styles.</p>
 </li>
 <li>
 <p><strong>Run your own experiment</strong> <br>
 It is now your turn to expand this exploration. Add a fourth input dataset to the <code>Study_Gravity</code> by choosing a planet of your choice (e.g., Jupiter, Venus, or even the Sun) and look up its gravity value:</p>
 <ul>
-<li>To optimize the execution, deactivate the previous datasets (<code>Earth</code>, <code>Moon</code>, <code>Mars</code>) within the study. This ensures the application will only process your new dataset.</li>
+<li>To avoid repeated computations, you can disable the execution of the previous datasets (<code>Earth</code>, <code>Moon</code>, <code>Mars</code>) within the study. This ensures the application will only process your new dataset.</li>
+<li>However, make sure to re-enable the execution of the <code>PolygonGeometryProc</code> and <code>ProjectileModelProc</code> so they can generate their output results for this new dataset.</li>
 <li>Customize the appearance of your new curve in the <code>TrajectoryAnalysisProc</code> results settings. You can refer to the <a href="https://matplotlib.org/stable/" target="_blank">Matplotlib</a> conventions for the <a href="https://matplotlib.org/stable/gallery/color/named_colors.html" target="_blank">colors</a>, <a href="https://matplotlib.org/stable/api/markers_api.html" target="_blank">markers</a> and <a href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">linestyles</a>.</li>
 </ul>
 </li>
