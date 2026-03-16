@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://nuremics.github.io/handbook/usability/">
+      
       
         <link rel="prev" href="../design/">
       
@@ -856,32 +858,32 @@
 <p>The operator then configures each study by selecting which inputs stay constant <em>(Fixed)</em> and which ones change <em>(Variable)</em> across the various experiments.</p>
 <pre class="mermaid"><code>flowchart LR
 
-  subgraph Fixed1["**Fixed**"]
+  subgraph Fixed1["&lt;b&gt;Fixed&lt;b&gt;"]
     direction TB
 
-    subgraph Paths_Fixed1["**Paths**"]
+    subgraph Paths_Fixed1["&lt;b&gt;Paths&lt;b&gt;"]
       direction LR
       path1_1["plot_title.txt"]
       path2_1["velocity.json"]
       path3_1["configs"]
     end
 
-    subgraph Parameter_Fixed1["**Parameters**"]
+    subgraph Parameter_Fixed1["&lt;b&gt;Parameters&lt;b&gt;"]
       direction LR
       param2_1["gravity"]
       param3_1["mass"]
     end
   end
 
-  subgraph Variable1["**Variable**"]
+  subgraph Variable1["&lt;b&gt;Variable&lt;b&gt;"]
     direction TB
 
-    subgraph Paths_Variable1["**Paths**"]
+    subgraph Paths_Variable1["&lt;b&gt;Paths&lt;b&gt;"]
       direction LR
       no_path["_"]
     end
 
-    subgraph Parameter_Variable1["**Parameters**"]
+    subgraph Parameter_Variable1["&lt;b&gt;Parameters&lt;b&gt;"]
       direction LR
       param1_1["nb_sides"]
     end
@@ -890,16 +892,16 @@
   Study_Shape --&gt; Fixed1
   Study_Shape --&gt; Variable1
 
-  subgraph Fixed2["**Fixed**"]
+  subgraph Fixed2["&lt;b&gt;Fixed&lt;b&gt;"]
     direction TB
 
-    subgraph Paths_Fixed2["**Paths**"]
+    subgraph Paths_Fixed2["&lt;b&gt;Paths&lt;b&gt;"]
       direction LR
       path1_2["plot_title.txt"]
       path3_2["configs"]
     end
 
-    subgraph Parameter_Fixed2["**Parameters**"]
+    subgraph Parameter_Fixed2["&lt;b&gt;Parameters&lt;b&gt;"]
       direction LR
       param1_2["nb_sides"]
       param2_2["gravity"]
@@ -907,15 +909,15 @@
     end
   end
 
-  subgraph Variable2["**Variable**"]
+  subgraph Variable2["&lt;b&gt;Variable&lt;b&gt;"]
     direction TB
 
-    subgraph Paths_Variable2["**Paths**"]
+    subgraph Paths_Variable2["&lt;b&gt;Paths&lt;b&gt;"]
       direction LR
       path2_2["velocity.json"]
     end
 
-    subgraph Parameter_Variable2["**Parameters**"]
+    subgraph Parameter_Variable2["&lt;b&gt;Parameters&lt;b&gt;"]
       direction LR
       no_param["_"]
     end

@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://nuremics.github.io/labs/apps/simulation/CANTILEVER_SHEAR_APP/app/">
+      
       
       
       
@@ -822,10 +824,8 @@
 
 <h1 id="cantilever_shear_app">CANTILEVER_SHEAR_APP</h1>
 <p align="left">
-  <img src="https://img.shields.io/badge/CadQuery-2.5.2+-2980b9" />
+  <img src="https://img.shields.io/badge/pythonocc--core-7.4.0+-f7941e" />
   <img src="https://img.shields.io/badge/Gmsh-4.14.0+-ffffff" />
-  <img src="https://img.shields.io/badge/pythonocc--core-7.9.0-f7941e" />
-  <img src="https://img.shields.io/badge/PyQt6-6.9.1-000000" />
 </p>
 
 <h2 id="workflow">Workflow</h2>
@@ -836,10 +836,10 @@
   A/ <strong><code>label_entities</code>:</strong> Assign labels to the entities of a geometric model.</li>
 </ol>
 <pre class="mermaid"><code>flowchart RL
-  **GeometryProc** e1@--1--o **CANTILEVER_SHEAR_APP**
-  **LabelingProc** e2@--2--o **CANTILEVER_SHEAR_APP**
-  **create_geometry** e3@--A--o **GeometryProc**
-  **label_entities** e4@--A--o **LabelingProc**
+  **GeometryProc** e1@--1--o CANTILEVER_SHEAR_APP
+  LabelingProc e2@--2--o CANTILEVER_SHEAR_APP
+  create_geometry e3@--A--o GeometryProc
+  label_entities e4@--A--o LabelingProc
   e1@{ animate: true }
   e2@{ animate: true }
   e3@{ animate: true }
@@ -862,7 +862,7 @@
     float height "0.1"
   }
   **output_paths** {
-    file outfile "geometry.(step/brep)"
+    file outfile "geometry.brep"
   }</code></pre>
 <pre class="mermaid"><code>erDiagram
   **CANTILEVER_SHEAR_APP** ||--|| **user_params** : mapping
@@ -876,7 +876,7 @@
     int dim "dimension"
   }
   **required_paths** {
-    file infile "geometry.(step/brep)"
+    file infile "geometry.brep"
   }
   **output_paths** {
     file outfile "labels.json"
@@ -905,7 +905,7 @@
 
   subgraph **OUTPUTS**
     direction RL
-    out1["geometry.(step/brep) _(file)_"]
+    out1["geometry.brep _(file)_"]
     out2["labels.json _(file)_"]
   end
 
@@ -933,7 +933,7 @@
 
   subgraph **OUTPUTS**
     direction RL
-    out1["geometry.(step/brep) _(file)_"]
+    out1["geometry.brep _(file)_"]
   end
 
   **INPUTS** --&gt; proc1
@@ -944,7 +944,7 @@
 
     subgraph **Paths**
       direction LR
-      out1["geometry.(step/brep) _(file)_"]
+      out1["geometry.brep _(file)_"]
     end
 
     subgraph **Parameters**
@@ -978,7 +978,7 @@
 <p>N/A</p>
 <h3 id="outputs">OUTPUTS</h3>
 <ul>
-<li><strong><code>geometry.(step/brep)</code>:</strong> File containing the geometric model (in .step if <code>dim</code> = 3|2 or .brep if <code>dim</code> = 1).</li>
+<li><strong><code>geometry.brep</code>:</strong> File containing the geometric model.</li>
 <li><strong><code>labels.json</code>:</strong> File containing the labeled geometric entities.</li>
 </ul>
 <hr />

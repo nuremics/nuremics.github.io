@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://nuremics.github.io/handbook/design/">
+      
       
         <link rel="prev" href="../">
       
@@ -919,15 +921,15 @@
 <h2 id="app">App</h2>
 <p>A final end-user <strong>App</strong> can be built by plugging together previously implemented <strong>Procs</strong>, and specifying their sequential order of execution within the workflow.</p>
 <pre class="mermaid"><code>flowchart RL
-  **PolygonGeometryProc** e1@--1--o **DEMO_APP**
-  **ProjectileModelProc** e2@--2--o **DEMO_APP**
-  **TrajectoryAnalysisProc** e3@--3--o **DEMO_APP**
-  **generate_polygon_shape** e4@--A--o **PolygonGeometryProc**
-  **plot_polygon_shape** e5@--B--o **PolygonGeometryProc**
-  **simulate_projectile_motion** e6@--A--o **ProjectileModelProc**
-  **calculate_analytical_trajectory** e7@--B--o **ProjectileModelProc**
-  **compare_model_vs_analytical_trajectories** e8@--C--o **ProjectileModelProc**
-  **plot_overall_model_vs_theory** e9@--A--o **TrajectoryAnalysisProc**
+  Proc1[&lt;b&gt;PolygonGeometryProc&lt;b&gt;] e1@--1--o App[&lt;b&gt;DEMO_APP&lt;b&gt;]
+  Proc2[&lt;b&gt;ProjectileModelProc&lt;b&gt;] e2@--2--o App
+  Proc3[&lt;b&gt;TrajectoryAnalysisProc&lt;b&gt;] e3@--3--o App
+  Op11[&lt;b&gt;generate_polygon_shape&lt;b&gt;] e4@--A--o Proc1
+  Op12[&lt;b&gt;plot_polygon_shape&lt;b&gt;] e5@--B--o Proc1
+  Op21[&lt;b&gt;simulate_projectile_motion&lt;b&gt;] e6@--A--o Proc2
+  Op22[&lt;b&gt;calculate_analytical_trajectory&lt;b&gt;] e7@--B--o Proc2
+  Op23[&lt;b&gt;compare_model_vs_analytical_trajectories&lt;b&gt;] e8@--C--o Proc2
+  Op31[&lt;b&gt;plot_overall_model_vs_theory&lt;b&gt;] e9@--A--o Proc3
   e1@{ animate: true }
   e2@{ animate: true }
   e3@{ animate: true }
@@ -1071,98 +1073,98 @@
   }</code></pre>
 <p>Once all <strong>Procs</strong> have been assembled into the <strong>App</strong>, the final I/O interface presented to the end-user emerges.</p>
 <pre class="mermaid"><code>flowchart LR
-  subgraph **INPUTS**
+  subgraph Inputs[&lt;b&gt;INPUTS&lt;b&gt;]
     direction TB
 
-    subgraph **Paths**
+    subgraph Paths[&lt;b&gt;Paths&lt;b&gt;]
       direction LR
-      path1["plot_title.txt _(file)_"]
-      path2["velocity.json _(file)_"]
-      path3["configs _(folder)_"]
+      path1["plot_title.txt &lt;i&gt;(file)&lt;i&gt;"]
+      path2["velocity.json &lt;i&gt;(file)&lt;i&gt;"]
+      path3["configs &lt;i&gt;(folder)&lt;i&gt;"]
     end
 
-    subgraph **Parameters**
+    subgraph Parameters[&lt;b&gt;Parameters&lt;b&gt;]
       direction LR
-      param1["nb_sides _(int)_"]
-      param2["gravity _(float)_"]
-      param3["mass _(float)_"]
+      param1["nb_sides &lt;i&gt;(int)&lt;i&gt;"]
+      param2["gravity &lt;i&gt;(float)&lt;i&gt;"]
+      param3["mass &lt;i&gt;(float)&lt;i&gt;"]
     end
   end
 
-  subgraph **DEMO_APP**
+  subgraph App[&lt;b&gt;DEMO_APP&lt;b&gt;]
     direction RL
     proc1["PolygonGeometryProc"]
     proc2["ProjectileModelProc"]
   end
 
-  subgraph **OUTPUTS**
+  subgraph Outputs[&lt;b&gt;OUTPUTS&lt;b&gt;]
     direction RL
-    out1["points_coordinates.csv _(file)_"]
-    out2["polygon_shape.png _(file)_"]
-    out3["comparison _(folder)_"]
+    out1["points_coordinates.csv &lt;i&gt;(file)&lt;i&gt;"]
+    out2["polygon_shape.png &lt;i&gt;(file)&lt;i&gt;"]
+    out3["comparison &lt;i&gt;(folder)&lt;i&gt;"]
   end
 
-  **INPUTS** --&gt; **DEMO_APP**
-  **DEMO_APP** --&gt; **OUTPUTS**</code></pre>
+  Inputs --&gt; App
+  App --&gt; Outputs</code></pre>
 <p>It is also insightful for the end-user to present this I/O interface by showing which <strong>INPUTS</strong> are used by each <strong>Proc</strong> of the <strong>App</strong>, and which <strong>OUTPUTS</strong> are written by each of them.</p>
 <pre class="mermaid"><code>flowchart LR
-  subgraph **INPUTS**
+  subgraph Inputs[&lt;b&gt;INPUTS&lt;b&gt;]
     direction TB
 
-    subgraph **Paths**
+    subgraph Paths[&lt;b&gt;Paths&lt;b&gt;]
       direction LR
-      path1["plot_title.txt _(file)_"]
+      path1["plot_title.txt &lt;i&gt;(file)&lt;i&gt;"]
     end
 
-    subgraph **Parameters**
+    subgraph Parameters[&lt;b&gt;Parameters&lt;b&gt;]
       direction LR
-      param1["nb_sides _(int)_"]
+      param1["nb_sides &lt;i&gt;(int)&lt;i&gt;"]
     end
   end
 
-  subgraph **DEMO_APP**
+  subgraph App[&lt;b&gt;DEMO_APP&lt;b&gt;]
     direction RL
     proc1["PolygonGeometryProc"]
   end
 
-  subgraph **OUTPUTS**
+  subgraph Outputs[&lt;b&gt;OUTPUTS&lt;b&gt;]
     direction RL
-    out1["points_coordinates.csv _(file)_"]
-    out2["polygon_shape.png _(file)_"]
+    out1["points_coordinates.csv &lt;i&gt;(file)&lt;i&gt;"]
+    out2["polygon_shape.png &lt;i&gt;(file)&lt;i&gt;"]
   end
 
-  **INPUTS** --&gt; proc1
-  proc1 --&gt; **OUTPUTS**</code></pre>
+  Inputs --&gt; proc1
+  proc1 --&gt; Outputs</code></pre>
 <pre class="mermaid"><code>flowchart LR
-  subgraph **INPUTS**
+  subgraph Inputs[&lt;b&gt;INPUTS&lt;b&gt;]
     direction TB
 
-    subgraph **Paths**
+    subgraph Paths[&lt;b&gt;Paths&lt;b&gt;]
       direction LR
-      path2["velocity.json _(file)_"]
-      path3["configs _(folder)_"]
-      out1["points_coordinates.csv _(file)_"]
+      path2["velocity.json &lt;i&gt;(file)&lt;i&gt;"]
+      path3["configs &lt;i&gt;(folder)&lt;i&gt;"]
+      out1["points_coordinates.csv &lt;i&gt;(file)&lt;i&gt;"]
     end
 
-    subgraph **Parameters**
+    subgraph Parameters[&lt;b&gt;Parameters&lt;b&gt;]
       direction LR
-      param2["gravity _(float)_"]
-      param3["mass _(float)_"]
+      param2["gravity &lt;i&gt;(float)&lt;i&gt;"]
+      param3["mass &lt;i&gt;(float)&lt;i&gt;"]
     end
   end
 
-  subgraph **DEMO_APP**
+  subgraph App[&lt;b&gt;DEMO_APP&lt;b&gt;]
     direction RL
     proc2["ProjectileModelProc"]
   end
 
-  subgraph **OUTPUTS**
+  subgraph Outputs[&lt;b&gt;OUTPUTS&lt;b&gt;]
     direction RL
-    out3["comparison _(folder)_"]
+    out3["comparison &lt;i&gt;(folder)&lt;i&gt;"]
   end
 
-  **INPUTS** --&gt; proc2
-  proc2 --&gt; **OUTPUTS**
+  Inputs --&gt; proc2
+  proc2 --&gt; Outputs
 
   classDef blueBox fill:#d0e6ff,stroke:#339,stroke-width:1.5px;
   class out1 blueBox;</code></pre>
